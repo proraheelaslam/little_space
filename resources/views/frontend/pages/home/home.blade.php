@@ -327,7 +327,7 @@
                     <img  src="{{asset('frontend/images/img2.png')}}" alt="" width="60" height="60" />
                     <div class="ms-6">
                       <h3>Location</h3>
-                      <h6 class="search_address_text">You have told us you live at W2 4EB 29 Pembridge Gardens London</h6>
+                      <h6 class="search_address_text"></h6>
                     </div>
                   </div>
                 </div>
