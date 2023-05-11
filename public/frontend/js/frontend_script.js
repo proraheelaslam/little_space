@@ -1,7 +1,7 @@
 let userBangObj = {};
 const accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
 let latLong = [-21.92661562, 64.14356426];
-
+let stepNumber = 1;
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -11,12 +11,42 @@ $.ajaxSetup({
 $(document).ready(function() {
 
       initFetchify();
+
+      function hideFirstStep(){
+        $("#nav-home").removeClass('active');
+        $("#nav-home").removeClass('show');
+        $("#na-home").removeClass('active');
+        $("#na-home").removeClass('show');
+      }
+
       $("body").on('click','.back_home_page',function() {
-            $("#nav-home").addClass('active');
-            $("#nav-home").addClass('show');
-            //
-            $("#na-home").removeClass('active');
-            $("#na-home").removeClass('show');
+             
+            let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');
+            console.log('stepNo', stepNumber);
+            if(stepNumber == 1){
+             
+              $("#nav-home").show();
+              $("#nav-home").addClass('show');
+              $("#nav-profile").hide();
+              $("#na-home").hide();
+              $("#nav-contact").hide();
+            }else if(stepNumber == 2){
+             // hideFirstStep();
+              $("#nav-home").hide();
+              $("#nav-profile").hide();
+              $("#na-home").show();
+              //$("#nav-home").removeClass('show');
+              stepNumber = 1;
+
+            }else if(stepNumber == 3){
+              $("#nav-home").hide();
+              $("#nav-profile").show();
+              $("#na-home").hide();
+              $("#nav-contact").hide();
+             // $("#nav-home").removeClass('show');
+              stepNumber = 2;
+            }
+           
       });
       $("body").on('click','.get_home_bang',function() { 
           let bangType = $(this).attr('data-type');
@@ -31,7 +61,8 @@ $(document).ready(function() {
           let bangTypeText = bangTypeTexUpperCase(bangType);
          // $(".request_bang_text").text(`You’re requesting the ${bangTypeText} BANG! for`);
            $(".home_bang_type_text").text(bangType);
-           window.scrollTo(0, 0)
+           window.scrollTo(0, 0);
+           stepNumber = 1;
       });
 
       $("body").on('click','.c2a_results li',function() {
@@ -54,6 +85,7 @@ $(document).ready(function() {
           if(isAddrValidate){
             showUserProfileStep();
             showMapAddress('address_map_1',latLong);
+            stepNumber  = 2;
           }
       });
 
@@ -62,7 +94,8 @@ $(document).ready(function() {
           let isUserDetaiValidate = userDetailValidate();
           if(isUserDetaiValidate){
             showMapOnUserDetailStep();
-            showMapAddress('address_map_2', latLong)
+            showMapAddress('address_map_2', latLong);
+            stepNumber = 3;
           }
       });
       $("body").on('click','.finish_steps_button', function(e) {
