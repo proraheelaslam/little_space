@@ -31,6 +31,7 @@ $(document).ready(function() {
           let bangTypeText = bangTypeTexUpperCase(bangType);
          // $(".request_bang_text").text(`You’re requesting the ${bangTypeText} BANG! for`);
            $(".home_bang_type_text").text(bangType);
+           window.scrollTo(0, 0)
       });
 
       $("body").on('click','.c2a_results li',function() {
@@ -40,8 +41,10 @@ $(document).ready(function() {
             $(".address_request_bang").text(address);
             getLatLongByAddress(address, function(result){
               let latLong = result;
-              showMapAddress('address_map_1', latLong);
-              showMapAddress('address_map_2', latLong)
+              setTimeout(()=> {
+                showMapAddress('address_map_1', latLong);
+                showMapAddress('address_map_2', latLong);
+              },500);
             });
       });
       $("body").on('click','.address_step_tab_button', function(e) {

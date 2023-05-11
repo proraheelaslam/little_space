@@ -101,7 +101,7 @@
                   <li>SAVE MONEY!</li>
                   <li>Transparent prices</li>
                 </ul>
-                <div class="nav MultiTab justify-content-start" id="nav-tab" role="tablist">
+                <div class="nav MultiTab justify-content-start mblcenter" id="nav-tab" role="tablist">
                   <button class="btnLink border-0 get_home_bang" data-type="tradesperson" id="na-home-tab" data-bs-toggle="tab" data-bs-target="#na-home" type="button" role="tab" aria-controls="na-home" aria-selected="false">GET YOUR HOME’S BANG!</button>
                 </div>
               </div>
@@ -142,7 +142,7 @@
                   <li>SAVE MONEY!</li>
                   <li>Transparent prices</li>
                 </ul>
-                <div class="nav MultiTab justify-content-start" id="nav-tab" role="tablist">
+                <div class="nav MultiTab justify-content-start mblcenter" id="nav-tab" role="tablist">
                   <button class="btnLink border-0 get_home_bang" data-type="bikeservice" id="na-home-tab" data-bs-toggle="tab" data-bs-target="#na-home" type="button" role="tab" aria-controls="na-home" aria-selected="false">GET YOUR HOME’S BANG!</button>
                 </div>
               </div>

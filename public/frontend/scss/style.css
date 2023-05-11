@@ -880,6 +880,13 @@ body {
   .customtop h2 {
     text-align: center;
   }
+  .mblcenter button {
+    margin: 0 auto;
+  }
+  .mapimg {
+    width: 100% !important;
+    height: 210px !important;
+  }
 }
 .navbar-toggler:focus {
   box-shadow: 0px 0px 0px 0px #000;
