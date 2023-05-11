@@ -1,4 +1,6 @@
 let userBangObj = {};
+const accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
+//let latLong = [-21.92661562, 64.14356426];
 
 $.ajaxSetup({
     headers: {
@@ -36,13 +38,17 @@ $(document).ready(function() {
             $(".search_address_input").val(address);
             $(".search_address_text").text(address);
             $(".address_request_bang").text(address);
+            getLatLongByAddress(address, function(result){
+              let latLong = result;
+              showMapAddress('address_map_1', latLong);
+            });
       });
       $("body").on('click','.address_step_tab_button', function(e) {
           e.preventDefault(); 
           let isAddrValidate = addressValidate();
           if(isAddrValidate){
             showUserProfileStep();
-            showMapAddress('address_map_1');
+            //showMapAddress('address_map_1');
           }
       });
 
@@ -76,7 +82,6 @@ $(document).ready(function() {
         // bang object
         userBangObj.bangId = bangId;
         userBangObj.postalCode = postalCode;
-        console.log(userBangObj);
         //  return false;
         $(obj).addClass('disable_class');  
         $.ajax({
@@ -180,8 +185,8 @@ $(document).ready(function() {
                  let province = address.province;
                  let country_name = address.country_name;
                  let completeAddress = `${locality}  ${country_name}`;
-                 console.log(address.postal_code);
                  $(".postal_code").val(address.postal_code);
+                
                
              },
              gfxMode: 2
@@ -189,11 +194,32 @@ $(document).ready(function() {
      }
  
  
+function getLatLongByAddress(postalCode, callback){
+  
+      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${postalCode}.json?proximity=ip&access_token=` + accessToken;
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          // Handle the API response data here
+          if(data.features.length > 0){
+            let corrdinates = data.features[0].center;
+            callback(corrdinates)
+           
+          }else {
+            callback([-21.92661562, 64.14356426]);
+          }
+        })
+        .catch(error => {
+          // Handle any errors that occurred during the request
+          callback(error)
+          console.error(error);
+        });
 
+}
 
-function showMapAddress(containerId){
-    let latLong = [-21.92661562, 64.14356426];
-    mapboxgl.accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
+function showMapAddress(containerId, latLong){
+  
+    mapboxgl.accessToken = accessToken;
     const map = new mapboxgl.Map({
         container: containerId, // container ID
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
