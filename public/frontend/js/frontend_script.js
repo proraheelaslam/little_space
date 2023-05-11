@@ -41,6 +41,7 @@ $(document).ready(function() {
             getLatLongByAddress(address, function(result){
               let latLong = result;
               showMapAddress('address_map_1', latLong);
+              showMapAddress('address_map_2', latLong)
             });
       });
       $("body").on('click','.address_step_tab_button', function(e) {
@@ -57,7 +58,7 @@ $(document).ready(function() {
           let isUserDetaiValidate = userDetailValidate();
           if(isUserDetaiValidate){
             showMapOnUserDetailStep();
-            showMapAddress('address_map_2')
+            // showMapAddress('address_map_2')
           }
       });
       $("body").on('click','.finish_steps_button', function(e) {
