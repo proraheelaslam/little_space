@@ -1,6 +1,6 @@
 let userBangObj = {};
 const accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
-//let latLong = [-21.92661562, 64.14356426];
+let latLong = [-21.92661562, 64.14356426];
 
 $.ajaxSetup({
     headers: {
@@ -40,7 +40,7 @@ $(document).ready(function() {
             $(".search_address_text").text(address);
             $(".address_request_bang").text(address);
             getLatLongByAddress(address, function(result){
-              let latLong = result;
+               latLong = result;
               setTimeout(()=> {
                 showMapAddress('address_map_1', latLong);
                 showMapAddress('address_map_2', latLong);
@@ -49,10 +49,11 @@ $(document).ready(function() {
       });
       $("body").on('click','.address_step_tab_button', function(e) {
           e.preventDefault(); 
+          console.log('latLong', latLong);
           let isAddrValidate = addressValidate();
           if(isAddrValidate){
             showUserProfileStep();
-            //showMapAddress('address_map_1');
+            showMapAddress('address_map_1',latLong);
           }
       });
 
@@ -61,7 +62,7 @@ $(document).ready(function() {
           let isUserDetaiValidate = userDetailValidate();
           if(isUserDetaiValidate){
             showMapOnUserDetailStep();
-            // showMapAddress('address_map_2')
+            showMapAddress('address_map_2', latLong)
           }
       });
       $("body").on('click','.finish_steps_button', function(e) {
