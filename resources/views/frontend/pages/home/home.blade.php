@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
 
-<section>
+<section class="main_inner_section">
   <input type="hidden" value="" class="bang_type" />
   <input type="hidden" value="" class="postal_code" />
   <input type="hidden" value="" class="latitude" />
@@ -254,8 +254,8 @@
             <div class="col-lg-5">
               <img class="bang_type_image" src="{{asset('frontend/images/img1.png')}}" alt="" width="100%" />
               <div class="w-100 px-4">
-                <h5 class="m-0 text-white">So you need a plumber?<Br> No problem!</h5>
-                <h6 class="text-white pe-2">The first price you should check is your home’s BANG! Price. Start by finding your home.</h6>
+                <h5 class="m-0 text-white sel_card_heading">So you need a plumber?<Br> No problem!</h5>
+                <h6 class="text-white pe-2 sel_card_description">The first price you should check is your home’s BANG! Price. Start by finding your home.</h6>
               </div>
             </div>
             <div class="col-lg-12 d-block d-md-none">
@@ -316,6 +316,22 @@
             <div class="col-lg-7">
               <div class="w-100 text-center">
                 <h4 class="text-white">FIND YOUR HOME </h4>
+                <div class="Faqs bg-transparent p-0 faqtop">
+                  <div class="accordion text-start mx-auto w-100 px-md-4" id="accordionExample">
+                    <div class="accordion-item bg-transparent px-md-5 m-0">
+                      <h3 class="accordion-header text-white" id="headingOne6">
+                        <button class="accordion-button text-uppercase text-white bg-transparent p-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne6" aria-expanded="true" aria-controls="collapseOne6">
+                          Have BANG!S reached your home yet?
+                        </button>
+                      </h3>
+                      <div id="collapseOne6" class="accordion-collapse collapse" aria-labelledby="headingOne6" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-white p-0">
+                          <p>Just launched! BANG!S are currently available in London ( W2, NW8 and SW1 and Birmingham ( B3, B4 and B2 ).)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h5 class="text-white">Type a part of postcode or address</h5>
               </div>
               <form>

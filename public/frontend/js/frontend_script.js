@@ -49,6 +49,7 @@ $(document).ready(function() {
            
       });
       $("body").on('click','.get_home_bang',function() { 
+          $(".main_inner_section").removeClass('selected_bike_card_active')
           let bangType = $(this).attr('data-type');
           $(".bang_type").val(bangType);
           let bikeServiceImg = base_url+"/frontend/images/bike-card-plain.png";
@@ -57,12 +58,28 @@ $(document).ready(function() {
           if(bangType == "bikeservice"){
             $(".bang_type_image").attr('src',bikeServiceImg);
           } 
-          userBangObj.bang_type = bangType;
-          let bangTypeText = bangTypeTexUpperCase(bangType);
-         // $(".request_bang_text").text(`You’re requesting the ${bangTypeText} BANG! for`);
+           userBangObj.bang_type = bangType;;
            $(".home_bang_type_text").text(bangType);
-           window.scrollTo(0, 0);
            stepNumber = 1;
+           $(".sel_card_heading").html(`So you need a plumber? <br/> No problem!`);
+           $(".sel_card_description").html(`The first price you should check is your home’s BANG! Price. Start by finding your home.`);
+           if(bangType === "bikeservice"){
+               $(".main_inner_section").addClass('selected_bike_card_active');
+               $(".sel_card_heading").html(`Bike need a service? <br/> We’ve got you.`);
+               $(".sel_card_description").html(`When your bike needs a service the first price you should check is your home’s bike service BANG! for 2023.`);
+           }
+
+           $('html, body').animate({ scrollTop: 0 }, 0);
+           $(".home_bang_type_text").text(bangType);
+           // show hide page
+           $("#nav-home").removeClass('show');
+           $("#nav-home").removeClass('active');
+           $("#nav-home").hide();
+           // show step page
+           $("#na-home").show();
+           $("#na-home").addClass('show');
+           $("#na-home").addClass('active')
+           
       });
 
       $("body").on('click','.c2a_results li',function() {
@@ -203,7 +220,7 @@ $(document).ready(function() {
     // fetchify API 
      function initFetchify() {
          new clickToAddress({
-             accessToken: '72336-c68cb-b16f6-08f3c',
+             accessToken: '0f17e-fd43c-31f0d-08f77',
              dom: {
                  search:		'search_address',
                  town:		'town',

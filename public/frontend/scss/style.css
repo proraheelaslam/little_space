@@ -283,7 +283,8 @@ body {
   background: #FEDE0D;
 }
 
-.formTabTwo input[type=text], .formTabTwo input[type=number] {
+.formTabTwo input[type=text],
+.formTabTwo input[type=number] {
   height: 82px;
   width: 100%;
   background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #DEDEDE 100%);
@@ -524,6 +525,34 @@ body {
   display: none;
 }
 
+.navbar-toggler:focus {
+  box-shadow: 0px 0px 0px 0px #000;
+}
+
+.accordion-item {
+  border: 0px solid #000 !important;
+}
+
+.faqtop button {
+  font-size: 26px !important;
+}
+
+.selected_bike_card_active .bg-primary, .selected_bike_card_active .Faqs {
+  background: #FEDD02 !important;
+}
+.selected_bike_card_active .LastSec .text-white, .selected_bike_card_active .Faqs .text-white {
+  color: #000 !important;
+}
+.selected_bike_card_active .form-btn {
+  background: #DA3631 !important;
+}
+.selected_bike_card_active .LastSec {
+  padding: 185px 0 50px;
+}
+.selected_bike_card_active .Faqs .accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
 @media only screen and (max-width: 767px) {
   .header {
     height: 70px;
@@ -662,6 +691,12 @@ body {
     line-height: 21px;
     font-weight: 400;
   }
+  .faqtop {
+    display: block !important;
+  }
+  .faqtop button {
+    font-size: 15px !important;
+  }
   .Faqs .accordion .accordion-button {
     height: 40px;
   }
@@ -713,7 +748,8 @@ body {
     padding: 28px 30px;
     margin-top: 30px;
   }
-  .LastSec2 .container .formTabTwo input[type=text], .LastSec2 .container .formTabTwo input[type=number] {
+  .LastSec2 .container .formTabTwo input[type=text],
+  .LastSec2 .container .formTabTwo input[type=number] {
     height: 54px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -887,7 +923,4 @@ body {
     width: 100% !important;
     height: 210px !important;
   }
-}
-.navbar-toggler:focus {
-  box-shadow: 0px 0px 0px 0px #000;
 }/*# sourceMappingURL=style.css.map */
