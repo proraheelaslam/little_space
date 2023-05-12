@@ -312,7 +312,7 @@
                   </div>
               </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 search_address_section">
               <div class="w-100 text-center">
                 <h4 class="text-white">FIND YOUR HOME </h4>
                 <div class="Faqs bg-transparent p-0 faqtop">

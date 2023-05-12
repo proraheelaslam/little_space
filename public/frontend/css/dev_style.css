@@ -13,3 +13,4 @@
     background-size: 50px auto;
     background-color: rgba(255,255,255,0.8)
 }
+.selected_bike_card_active .search_address_section .text-white { color: white !important;}
