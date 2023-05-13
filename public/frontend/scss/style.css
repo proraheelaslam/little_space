@@ -96,7 +96,7 @@ body {
 }
 .TopSec .MultiTab li.active {
   border-bottom: 2px solid #DA3631;
-  color: #fff;
+  color: #fff !important;
 }
 .TopSec .MdlSec {
   background: #FCE657;
@@ -276,10 +276,10 @@ body {
 .LastSec2 ul li span::after {
   content: "";
   position: absolute;
-  top: 40px;
+  top: 48px;
   left: 23px;
   width: 5px;
-  height: 50px;
+  height: 55px;
   background: #FEDE0D;
 }
 
@@ -537,7 +537,10 @@ body {
   font-size: 26px !important;
 }
 
-.selected_bike_card_active .bg-primary, .selected_bike_card_active .Faqs {
+.selected_bike_card_active .centerSec, .selected_bike_card_active .TopSec, .selected_bike_card_active .Faqs3, .selected_bike_card_active .formTabTwo {
+  background: #DA3631 !important;
+}
+.selected_bike_card_active .bg-primary, .selected_bike_card_active .Faqs2, .selected_bike_card_active .Faqs1 {
   background: #FEDD02 !important;
 }
 .selected_bike_card_active .LastSec .text-white, .selected_bike_card_active .Faqs .text-white {
@@ -549,8 +552,52 @@ body {
 .selected_bike_card_active .LastSec {
   padding: 185px 0 50px;
 }
-.selected_bike_card_active .Faqs .accordion .accordion-button::after {
+.selected_bike_card_active .faqtop .accordion .accordion-button::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+.selected_bike_card_active .Faqs3 .text-white {
+  color: #fff !important;
+}
+.selected_bike_card_active .LastSec2 .text-white {
+  color: #000 !important;
+}
+.selected_bike_card_active .LastSec2 ul li span {
+  background: #DA3631 !important;
+}
+.selected_bike_card_active .LastSec2 ul li span::after {
+  background: #DA3631 !important;
+}
+.selected_bike_card_active .TopSec .MultiTab li {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+.selected_bike_card_active .TopSec .MultiTab li.active {
+  border-bottom: 2px solid #FCE657 !important;
+}
+.selected_bike_card_active .LastSec2 h3 {
+  font-size: 32px;
+  line-height: 45px;
+  color: #000;
+}
+.selected_bike_card_active .LastSec2 .formTabTwo {
+  background: none !important;
+  color: #000;
+}
+.selected_bike_card_active .LastSec2 .formTabTwo h3, .selected_bike_card_active .LastSec2 .formTabTwo span {
+  color: #000;
+  margin-bottom: 20px;
+}
+.selected_bike_card_active .LastSec2 ul li {
+  color: #000;
+  text-align: left;
+}
+.selected_bike_card_active .LastSec2 ul li span {
+  color: #fff;
+}
+.selected_bike_card_active .LastSec2 ul li b {
+  color: #000;
+  font-weight: 400;
+  width: 70%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -735,10 +782,20 @@ body {
   .LastSec2 h3 {
     font-size: 32px;
     line-height: 45px;
+    color: #000;
+  }
+  .LastSec2 .formTabTwo h3 {
+    color: #fff;
+    margin-bottom: 20px;
   }
   .LastSec2 ul li {
     font-size: 16px;
     line-height: 22px;
+    text-align: left;
+  }
+  .LastSec2 ul li b {
+    font-weight: 400;
+    width: 70%;
   }
   .LastSec2 .container {
     padding: 0;
@@ -922,5 +979,43 @@ body {
   .mapimg {
     width: 100% !important;
     height: 210px !important;
+  }
+  .selected_bike_card_active .Faqs2 {
+    padding: 0 !important;
+  }
+  .selected_bike_card_active .centerSec, .selected_bike_card_active .TopSec {
+    background: #DA3631 !important;
+  }
+  .selected_bike_card_active .search_address_section {
+    background: #DA3631 !important;
+  }
+  .selected_bike_card_active .search_address_section .text-white {
+    color: #fff !important;
+  }
+  .selected_bike_card_active .form-btn, .selected_bike_card_active .form-btn2 {
+    background: radial-gradient(50% 50% at 50% 50%, #FEE544 0%, #FEDD00 100%) !important;
+    color: #000 !important;
+  }
+  .selected_bike_card_active .LastSec {
+    padding: 26px 0 50px;
+  }
+  .selected_bike_card_active .Faqs .accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+  }
+  .selected_bike_card_active .Faqs .text-white {
+    color: #000 !important;
+  }
+  .selected_bike_card_active .faqtop .text-white {
+    color: #fff !important;
+  }
+  .selected_bike_card_active .faqtop .accordion .accordion-button::after {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAzMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljg5OTkgMTguMDQ1TDAuMzQ5OTE1IDMuNDk1TDMuNzQ0OTEgMC4wOTk5OTg1TDE0Ljg5OTkgMTEuMjU1TDI2LjA1NDkgMC4wOTk5OTg1TDI5LjQ0OTkgMy40OTVMMTQuODk5OSAxOC4wNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) !important;
+  }
+  .selected_bike_card_active .LastSec2 .formTabTwo {
+    background: #DA3631 !important;
+  }
+  .selected_bike_card_active .LastSec2 .formTabTwo h3, .selected_bike_card_active .LastSec2 .formTabTwo span {
+    color: #fff;
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -58,14 +58,15 @@ $(document).ready(function() {
           if(bangType == "bikeservice"){
             $(".bang_type_image").attr('src',bikeServiceImg);
           } 
-           userBangObj.bang_type = bangType;;
-           $(".home_bang_type_text").text(bangType);
+           userBangObj.bang_type = bangType;
+           $(".home_bang_type_text").text((bangType == "bikeservice" ? 'bike service' : 'tradesperson'));
            stepNumber = 1;
            $(".sel_card_heading").html(`So you need a plumber? <br/> No problem!`);
            $(".sel_card_description").html(`The first price you should check is your home’s BANG! Price. Start by finding your home.`);
            $(".tradeperson_bike_step_acc_1").html(`A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.`);
            $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.`); 
            $(".tradeperson_bike_step_acc_3").html(`We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.`); 
+           $(".banner_step_3_text").text(`Your home's Tradesperson BANG! will arrive inside 24 hours!`);
            if(bangType === "bikeservice"){
                $(".main_inner_section").addClass('selected_bike_card_active');
                $(".sel_card_heading").html(`Bike need a service? <br/> We’ve got you.`);
@@ -73,13 +74,13 @@ $(document).ready(function() {
                $(".tradeperson_bike_step_acc_1").html(`A Bike Service BANG! is an exclusive price for 1 local bike service in 2023. If your bike needs a service this year make sure you check your home’s BANG! price first`);
                $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 bike service BANG! which can be used by you and the people you live with.`); 
                $(".tradeperson_bike_step_acc_3").html(`We partner up with expert local bike technicians to ensure you’re not just getting a fantastic price but you’re also getting a premium level bike service at the same time. After all, that’s what BANG! is all about.`); 
-              }
+               $(".banner_step_3_text").text(`Your home's Bike service BANG! will arrive inside 24 hours!`);
+          }
            let bangText = bangTypeTexUpperCase(bangType);
            $(".home_bang_type_text_capital").text(bangText);
 
            
            $('html, body').animate({ scrollTop: 0 }, 0);
-           $(".home_bang_type_text").text(bangType);
            // show hide page
            $("#nav-home").removeClass('show');
            $("#nav-home").removeClass('active');

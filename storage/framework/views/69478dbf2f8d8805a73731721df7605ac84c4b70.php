@@ -237,7 +237,7 @@
           </ul>
         </div>
         <div class="MdlSec d-flex justify-content-center align-items-center">
-          <h5>You’re 2 steps away from getting your home’s exclusive <small class="home_bang_type_text">tradesperson</small> price for 2023
+          <h5>You’re 2 steps away from getting your home’s exclusive <small style="font-size: 26px;" class="home_bang_type_text web_bang_type">tradesperson</small> price for 2023
           </h5>
         </div>
       </div>
@@ -258,19 +258,19 @@
                 <h6 class="text-white pe-2 sel_card_description">The first price you should check is your home’s BANG! Price. Start by finding your home.</h6>
               </div>
             </div>
-            <div class="col-lg-12 d-block d-md-none">
+            <div class="col-lg-12 d-block d-md-none faqs2">
               <div class="Faqs Faqs1 text-center px-4">
                   <h2 class="text-white">FAQS</h2>
                   <div class="accordion text-start mx-auto" id="accordionExample">
                     <div class="accordion-item bg-transparent">
                       <h3 class="accordion-header text-white" id="headingOne">
                         <button class="accordion-button text-uppercase text-white bg-transparent p-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          What's a Tradesperson BANG! ?
+                          What's a&nbsp;<small style="font-size: 15px;" class="home_bang_type_text_capital">Tradesperson</small>&nbsp;BANG! ?
                         </button>
                       </h3>
                       <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-white p-0">
-                          <p>A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.</p>
+                          <p class="tradeperson_bike_step_acc_1">A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.</p>
                         </div>
                       </div>
                     </div>
@@ -282,7 +282,7 @@
                       </h3>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-white p-0">
-                          <p>Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.</p>
+                          <p class="tradeperson_bike_step_acc_2">Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.</p>
                         </div>
                       </div>
                     </div>
@@ -294,7 +294,7 @@
                       </h3>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-white p-0">
-                          <p>We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.</p>
+                          <p class="tradeperson_bike_step_acc_3">We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.</p>
                         </div>
                       </div>
                     </div>
@@ -306,7 +306,7 @@
                       </h3>
                       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-white p-0">
-                          <p>Of course! Just add the BANG! onto your order so it's ready to use the next time you need an expert</p>
+                          <p class="">Of course! Just add the BANG! onto your order so it's ready to use the next time you need an expert</p>
                         </div>
                       </div>
                     </div>
@@ -408,7 +408,7 @@
       <div class="centerSec">
         <div class="BtmSec text-center">
           <img src="<?php echo e(asset('frontend/images/logo-header-1.png')); ?>" class="logo-sec" height="83" width="auto" alt="" />
-          <h6 class="text-white px-5"> You’re requesting the <small class="home_bang_type_text_capital">tradesperson</small> BANG! for</h6>
+          <h6 class="text-white px-5"> You’re requesting the <small class="home_bang_type_text_capital ">tradesperson</small> BANG! for</h6>
           <h5 class="text-white address_request_bang"> 15, Smith St, London, W12 2AD.</h5>
           
           <div id='address_map_1' class="mx-auto mapimg" style='width: 700px; height: 380px;'></div>
@@ -420,9 +420,9 @@
             <div class="col-lg-6 px-4 px-md-3">
               <h3>WHAT’S  NEXT?</h3>
               <ul class="m-0 p-0">
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">1</span> Tell us your details</li>
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">2</span>Receive your home’s BANG! by email and SMS</li>
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">3</span>Find out your home’s 2023 price</li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">1</span> <b>Tell us your details</b></li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">2</span> <b>Receive your home’s BANG! by email and SMS</b></li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">3</span> <b>Find out your home’s 2023 price</b></li>
               </ul>
             </div>
             <div class="col-lg-6 formTabTwo">
@@ -497,7 +497,7 @@
           </ul>
         </div>
         <div class="MdlSec d-flex justify-content-center align-items-center">
-          <h5>Great! BANGS are available if you live in the  Westminster postcode area</h5>
+          <h5 class="banner_step_3_text">Your home's Tradesperson BANG! will arrive inside 24 hours!</h5>
         </div>
       </div>
       <div class="centerSec">
@@ -513,7 +513,7 @@
       </div>
     </div>
   </div>
-  <div class="Faqs text-center">
+  <div class="Faqs Faqs3 text-center">
     <div class="container">
       <h2 class="text-white">FAQS</h2>
       <div class="accordion text-start mx-auto" id="accordionExample">

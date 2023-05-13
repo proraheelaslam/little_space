@@ -118,7 +118,7 @@ body {
 
             &.active {
                 border-bottom: 2px solid #DA3631;
-                color: #fff;
+                color: #fff!important;
             }
         }
     }
@@ -327,10 +327,10 @@ body {
                 &::after {
                     content: "";
                     position: absolute;
-                    top: 40px;
+                    top: 48px;
                     left: 23px;
                     width: 5px;
-                    height: 50px;
+                    height: 55px;
                     background: #FEDE0D;
                 }
             }
@@ -634,20 +634,77 @@ body {
 }
 
 .selected_bike_card_active{
-    .bg-primary, .Faqs{
+    .centerSec, .TopSec, .Faqs3, .formTabTwo {
+        background: #DA3631 !important;
+    }
+    .bg-primary, .Faqs2, .Faqs1{
         background: #FEDD02!important;
     }
     .LastSec .text-white, .Faqs .text-white{
         color: #000!important;
     }
-    .form-btn{
+    .form-btn {
         background: #DA3631!important;
+        
     }
     .LastSec {
         padding: 185px 0 50px;
     }
-    .Faqs .accordion .accordion-button::after {
+    .faqtop .accordion .accordion-button::after {
         background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")!important;
+    }
+    .Faqs3 {
+        .text-white{
+            color: #fff!important;
+        }
+    }
+    .LastSec2 {
+        .text-white{
+            color: #000!important;
+        }
+    }
+    .LastSec2 ul li span {
+        background: #DA3631!important;
+        &::after{
+            background: #DA3631!important;
+        }
+    }
+    .TopSec .MultiTab li{
+        color:#000;
+        border-bottom: 2px solid #000;
+    }
+    .TopSec .MultiTab li.active {
+        border-bottom: 2px solid #FCE657!important;
+    }
+    .LastSec2 {
+        h3 {
+            font-size: 32px;
+            line-height: 45px;
+            color: #000;
+        }
+        .formTabTwo {
+            background: none!important;
+            color: #000;
+            h3, span {
+                color: #000;
+                margin-bottom: 20px;
+            }
+        }
+
+        ul {
+            li {
+                color: #000;
+                text-align: left;
+                span{
+                    color: #fff;
+                }
+                b{
+                    color: #000;
+                    font-weight: 400;
+                    width: 70%;
+                }
+            }
+        }
     }
 }
 
@@ -884,12 +941,24 @@ body {
         h3 {
             font-size: 32px;
             line-height: 45px;
+            color: #000;
+        }
+        .formTabTwo {
+            h3 {
+                color: #fff;
+                margin-bottom: 20px;
+            }
         }
 
         ul {
             li {
                 font-size: 16px;
                 line-height: 22px;
+                text-align: left;
+                b{
+                    font-weight: 400;
+                    width: 70%;
+                }
             }
         }
 
@@ -1124,6 +1193,54 @@ body {
     .mapimg {
         width: 100% !important;
         height: 210px !important;
+    }
+
+
+    .selected_bike_card_active{
+        .Faqs2{
+            padding: 0!important;
+        }
+        .centerSec, .TopSec {
+            background: #DA3631 !important;
+        }
+        .search_address_section{
+            background: #DA3631 !important;
+            .text-white{
+                color: #fff!important;
+            }
+        }
+        .form-btn, .form-btn2 {
+            background: radial-gradient(50% 50% at 50% 50%, #FEE544 0%, #FEDD00 100%)!important;
+            color:#000!important
+        }
+        .LastSec {
+            padding: 26px 0 50px;
+        }
+        .Faqs .accordion .accordion-button::after {
+            background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")!important;
+        }
+        .Faqs {
+            .text-white{
+                color: #000!important;
+            }
+        }
+        .faqtop {
+            .text-white{
+                color: #fff!important;
+            }
+        }
+        .faqtop .accordion .accordion-button::after {
+            background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAzMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljg5OTkgMTguMDQ1TDAuMzQ5OTE1IDMuNDk1TDMuNzQ0OTEgMC4wOTk5OTg1TDE0Ljg5OTkgMTEuMjU1TDI2LjA1NDkgMC4wOTk5OTg1TDI5LjQ0OTkgMy40OTVMMTQuODk5OSAxOC4wNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) !important;
+        }
+        .LastSec2 {
+            .formTabTwo {
+                background: #DA3631!important;
+                h3, span {
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
 
 }
