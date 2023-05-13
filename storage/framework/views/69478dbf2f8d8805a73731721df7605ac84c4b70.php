@@ -237,7 +237,8 @@
           </ul>
         </div>
         <div class="MdlSec d-flex justify-content-center align-items-center">
-          <h5>Great! BANGS are available if you live in the  Westminster postcode area</h5>
+          <h5>You’re 2 steps away from getting your home’s exclusive <small class="home_bang_type_text">tradesperson</small> price for 2023
+          </h5>
         </div>
       </div>
       <div class="centerSec">
@@ -401,21 +402,14 @@
           </ul>
         </div>
         <div class="MdlSec d-flex justify-content-center align-items-center">
-          <h5>Great! BANGS are available if you live in the  Westminster postcode area</h5>
+          <h5>If BANG!S are available where you live we’ll send your BANG! by email and SMS. </h5>
         </div>
       </div>
       <div class="centerSec">
         <div class="BtmSec text-center">
           <img src="<?php echo e(asset('frontend/images/logo-header-1.png')); ?>" class="logo-sec" height="83" width="auto" alt="" />
-          <h6 class="text-white px-5 request_bang_text">
-                Your home’s Tradesperson BANG! 
-                will be on its way to your inbox
-                inside 24 hours
-                We just need to check your haven’t 
-                used your home’s BANG! this year
-                and that you live in an active postcode area.
-          </h6>
-          
+          <h6 class="text-white px-5"> You’re requesting the <small class="home_bang_type_text_capital">tradesperson</small> BANG! for</h6>
+          <h5 class="text-white address_request_bang"> 15, Smith St, London, W12 2AD.</h5>
           
           <div id='address_map_1' class="mx-auto mapimg" style='width: 700px; height: 380px;'></div>
         </div>
@@ -424,15 +418,15 @@
         <div class="container">
           <div class="row mx-0">
             <div class="col-lg-6 px-4 px-md-3">
-              <h3>WHATS NEXT?</h3>
+              <h3>WHAT’S  NEXT?</h3>
               <ul class="m-0 p-0">
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">1</span> Receive your BANGS! by email</li>
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">2</span>Call your local BANGS! HQ</li>
-                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">3</span>Get your BANGS! price</li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">1</span> Tell us your details</li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">2</span>Receive your home’s BANG! by email and SMS</li>
+                <li class="d-flex justify-content-start align-items-center"><span class="d-flex justify-content-center align-items-center me-3">3</span>Find out your home’s 2023 price</li>
               </ul>
             </div>
             <div class="col-lg-6 formTabTwo">
-              <h3>LETS BANG!</h3>
+              <h3>LET’S BANG!</h3>
               <div class="row text-start">
                 <div class="col-lg-6 mb-6">
                   <input type="text" placeholder="First Name" class="first_name" />

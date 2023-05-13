@@ -86,7 +86,7 @@ $(document).ready(function() {
             let address = $(this).text();
             $(".search_address_input").val(address);
             $(".search_address_text").text(address);
-            $(".address_request_bang").text(address);
+           
             getLatLongByAddress(address, function(result){
                latLong = result;
               setTimeout(()=> {
@@ -172,6 +172,10 @@ $(document).ready(function() {
        let status = true;
        let address = $(".search_address_input").val();
        $(".address_request_bang").text(address);
+       let bangType = $(".bang_type").val();
+       let bangText = bangTypeTexUpperCase(bangType);
+      $(".home_bang_type_text_capital").text(bangText);
+      
        userBangObj.address = address;
        if($.trim(address) == ""){
            toastr.error('Please enter address!', 'Error!');
