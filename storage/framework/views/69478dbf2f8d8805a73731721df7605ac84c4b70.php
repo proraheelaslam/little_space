@@ -520,12 +520,15 @@
         <div class="accordion-item bg-transparent">
           <h3 class="accordion-header text-white" id="headingOne">
             <button class="accordion-button text-uppercase text-white bg-transparent p-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              What’s a Tradesperson BANG! ?
+             
+              What’s a&nbsp;<small style="font-size: 29px;" class="home_bang_type_text_capital">TRADESPERSON</small>&nbsp;BANG!? 
             </button>
           </h3>
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body text-white p-0">
-              <p>A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.</p>
+            <div class="accordion-body text-white p-0 ">
+
+              <p class="tradeperson_bike_step_acc_1">A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.</p>
+            
             </div>
           </div>
         </div>
@@ -537,7 +540,7 @@
           </h3>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body text-white p-0">
-              <p>Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.</p>
+              <p class="tradeperson_bike_step_acc_2">Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.</p>
             </div>
           </div>
         </div>
@@ -549,7 +552,7 @@
           </h3>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body text-white p-0">
-              <p>We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.</p>
+              <p class="tradeperson_bike_step_acc_3">We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.</p>
             </div>
           </div>
         </div>
