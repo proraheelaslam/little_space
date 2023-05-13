@@ -22,9 +22,8 @@ $(document).ready(function() {
       $("body").on('click','.back_home_page',function() {
              
             let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');
-            console.log('stepNo', stepNumber);
             if(stepNumber == 1){
-             
+              $(".main_inner_section").removeClass('selected_bike_card_active')
               $("#nav-home").show();
               $("#nav-home").addClass('show');
               $("#nav-profile").hide();
