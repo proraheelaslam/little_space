@@ -66,6 +66,7 @@ $(document).ready(function() {
            $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.`); 
            $(".tradeperson_bike_step_acc_3").html(`We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.`); 
            $(".banner_step_3_text").text(`Your home's Tradesperson BANG! will arrive inside 24 hours!`);
+           $(".home_bang_type_text_3").text('TRADESPERSON');
            if(bangType === "bikeservice"){
                $(".main_inner_section").addClass('selected_bike_card_active');
                $(".sel_card_heading").html(`Bike need a service? <br/> We’ve got you.`);
@@ -74,7 +75,9 @@ $(document).ready(function() {
                $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 bike service BANG! which can be used by you and the people you live with.`); 
                $(".tradeperson_bike_step_acc_3").html(`We partner up with expert local bike technicians to ensure you’re not just getting a fantastic price but you’re also getting a premium level bike service at the same time. After all, that’s what BANG! is all about.`); 
                $(".banner_step_3_text").text(`Your home's Bike service BANG! will arrive inside 24 hours!`);
-          }
+          
+               $(".home_bang_type_text_3").text('BIKE SERVICE');
+            }
            let bangText = bangTypeTexUpperCase(bangType);
            $(".home_bang_type_text_capital").text(bangText);
 
