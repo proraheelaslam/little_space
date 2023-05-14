@@ -15,10 +15,7 @@
 }
 .selected_bike_card_active .search_address_section .text-white { color: white !important;}
 .web_bang_type { font-size: 30px; }
-@media only screen and (max-width: 767px) {
-  .web_bang_type { font-size: 16px !important; }
-  .mob_bang_type_step3 { font-size: 32px !important; }
-}
+
 
 
 .mapboxgl-ctrl-geocoder {
@@ -47,4 +44,31 @@
 }
 .mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder .suggestions {
   box-shadow: 0 0 0px 0px rgba(0,0,0,.1)!important;
+}
+
+@media only screen and (max-width: 767px) {
+  .web_bang_type { font-size: 16px !important; }
+  .mob_bang_type_step3 { font-size: 32px !important; }
+
+
+  .mapboxgl-ctrl-geocoder--icon-search {
+    left: -15px!important;
+    width: 35px!important;
+    height: 22px !important;
+    top: 14px  !important;
+   }
+   .mapboxgl-ctrl-geocoder--icon-close {
+    width: 20px;
+    height: 18px;
+    margin-top: -41px;
+  } 
+   .mapboxgl-ctrl-geocoder--input { 
+  
+    padding: 2px 20px !important;
+    text-overflow: ellipsis  !important;
+    white-space: nowrap  !important;
+    overflow: hidden;
+    height: 47px !important;
+    font-size: 15px  !important;
+   }
 }
