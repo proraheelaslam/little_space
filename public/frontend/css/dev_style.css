@@ -27,3 +27,24 @@
   line-height: 20px;
   max-width: 100% !important;
 }
+.mapboxgl-ctrl-geocoder--icon-search {
+  left: -15px!important;
+  width: 35px!important;
+  height: 35px!important;
+  top: 30px!important;
+}
+.mapboxgl-ctrl-geocoder--input {
+  height: 96px;
+}
+.mapboxgl-ctrl-geocoder--input:focus {
+  outline: none!important;
+}
+.mapboxgl-ctrl-geocoder {
+  font-size: 32px!important;
+}
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {
+  top: 30px!important;
+}
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder .suggestions {
+  box-shadow: 0 0 0px 0px rgba(0,0,0,.1)!important;
+}
