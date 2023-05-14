@@ -504,7 +504,10 @@
       <div class="centerSec">
         <div class="BtmSec text-center">
           <img src="{{asset('frontend/images/logo-header-1.png')}}" height="83" width="auto" alt="" />
-          <h4 class="text-white mb-5 px-4">Your BANG! is on it’s way </h4>
+          {{-- <h4 class="text-white mb-5 px-4">Your BANG! is on it’s way </h4> --}}
+          <h4 class="text-white mb-0 px-4">Your home’s 2023 <small style="font-size: 64px;" class="home_bang_type_text mob_bang_type_step3">tradesperson</small> BANG! is on it’s way</h4>
+          <h6 class="text-white">We’ll text and email your home’s BANG! once we’ve checked it’s not been used this year and you live in an active postcode.</h6>
+       
           {{-- <img src="{{asset('frontend/images/img3.png')}}" class="mapimg" height="375" width="auto" alt="" /> --}}
           <div id='address_map_2' class="mx-auto mapimg" style='width: 700px; height: 380px;'></div>
           <div class="w-100 pt-0 pt-md-5 mt-3">
