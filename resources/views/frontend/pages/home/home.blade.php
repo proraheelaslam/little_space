@@ -6,6 +6,7 @@
   <input type="hidden" value="" class="postal_code" />
   <input type="hidden" value="" class="latitude" />
   <input type="hidden" value="" class="longitude" />
+  <input type="hidden" value="" id="latlang" />
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
       <header class="header pt-14 bg-primary">
@@ -205,7 +206,8 @@
             </a>
             <h5 class="d-block d-md-none">Find your address</h5>
             <div class="d-block d-md-none">
-              <img src="{{asset('frontend/images/img4.png')}}" alt="" />
+              <img src="{{asset('frontend/images/img4.png')}}" class="first"  alt="" />
+              <img src="{{asset('frontend/images/img10.png')}}" class="secound" alt="" />
             </div>
           </div>
           <ul class="MultiTab justify-content-center mx-auto d-none d-md-flex">
@@ -337,7 +339,8 @@
               </div>
               <form>
                 <div>
-                  <input type="text" name="search_address" class="form-select1 form-select search_address_input" placeholder="Find address"/>
+                  {{-- <input type="text" name="search_address" class="form-select1 form-select search_address_input" id="search_box_input" placeholder="Find address"/> --}}
+                  <div id="geocoder" class="geocoder w-100 shadow-0 form-select1 form-select search_address_input"></div>
                 </div>
                 <div class="textareaSec">
                   <div class="d-flex">
@@ -370,7 +373,8 @@
             </a>
             <h5 class="d-block d-md-none">Your details</h5>
             <div class="d-block d-md-none">
-              <img src="{{asset('frontend/images/img5.png')}}" alt="" />
+              <img src="{{asset('frontend/images/img5.png')}}"  class="first" alt="" />
+              <img src="{{asset('frontend/images/img11.png')}}" class="secound" alt="" />
             </div>
           </div>
           <ul class="MultiTab justify-content-center mx-auto d-none d-md-flex">
@@ -465,7 +469,8 @@
             </a>
             <h5 class="d-block d-md-none">Confirmation</h5>
             <div class="d-block d-md-none">
-              <img src="{{asset('frontend/images/img6.png')}}" alt="" />
+              <img src="{{asset('frontend/images/img6.png')}}"  class="first" alt="" />
+              <img src="{{asset('frontend/images/img12.png')}}" class="secound" alt="" />
             </div>
           </div>
           <ul class="MultiTab justify-content-center mx-auto d-none d-md-flex">

@@ -19,3 +19,11 @@
   .web_bang_type { font-size: 16px !important; }
   .mob_bang_type_step3 { font-size: 32px !important; }
 }
+
+
+.mapboxgl-ctrl-geocoder {
+  width: 100% !important;
+  font-size: 15px;
+  line-height: 20px;
+  max-width: 100% !important;
+}
