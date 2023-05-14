@@ -110,10 +110,9 @@ $(document).ready(function() {
       $("body").on('click','.address_step_tab_button', function(e) {
           e.preventDefault(); 
          
-          let latLong = JSON.parse($("#latlang").val());
-          console.log('latLong', latLong);
           let isAddrValidate = addressValidate();
-          if(true){
+          if(isAddrValidate){
+            let latLong = JSON.parse($("#latlang").val());
             showUserProfileStep();
             showMapAddress('address_map_1',latLong);
             searchMapbox('address_map_1',latLong);
@@ -188,12 +187,11 @@ $(document).ready(function() {
  
      function addressValidate(){
        let status = true;
-       let address = $(".search_address_input").val();
+       let address = $(".search_address_text").text();
        $(".address_request_bang").text(address);
        let bangType = $(".bang_type").val();
        let bangText = bangTypeTexUpperCase(bangType);
       $(".home_bang_type_text_capital").text(bangText);
-      
        userBangObj.address = address;
        if($.trim(address) == ""){
            toastr.error('Please enter address!', 'Error!');
@@ -337,10 +335,11 @@ function searchMapbox(container_dev,latLong){
         mapboxgl: mapboxgl
     });
     geocoder.on('result', (event) => {
-      console.log('bbb ', event.result.geometry);
+      console.log('bbb ', event);
+      let placeName =  event.result.place_name;
       let latLong = event.result.geometry.coordinates;
       $("#latlang").val(JSON.stringify(latLong));
-      $(".search_address_text").text("");
+      $(".search_address_text").text(placeName);
       //map.getSource('single-point').setData(event.result.geometry);
       });
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
