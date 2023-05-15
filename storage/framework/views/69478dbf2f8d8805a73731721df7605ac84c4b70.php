@@ -339,6 +339,7 @@
               <form>
                 <div>
                   <div id="geocoder" class="geocoder w-100 shadow-0 form-select1 form-select search_address_input"></div>
+                  <p style="color: white">Optional: Add your apartment/ flat number</p>
                   <input type="text" name="search_address" class="form-select1  apartment_input" placeholder="Enter apartment/flat number"/>
 
                   <div class="nav MultiTab justify-content-center mx-auto" >
