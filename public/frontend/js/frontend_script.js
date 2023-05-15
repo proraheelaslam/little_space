@@ -27,7 +27,7 @@ $(document).ready(function() {
               $("#nav-profile").hide();
               $("#na-home").hide();
               $("#nav-contact").hide();
-              
+
             }else if(stepNumber == 2){
              
               $("#nav-home").hide();
@@ -94,6 +94,14 @@ $(document).ready(function() {
       });
 
       
+      
+      $("body").on('keyup','.mapboxgl-ctrl-geocoder--input',function() {
+           let value = $(this).val();
+           console.log('value', value);
+           if($.trim(value) === ""){
+               $(".search_address_text").html('');
+           }
+      }); 
       $("body").on('click','.confim_address_btn',function() {
           let status = true;
           $(".search_address_text").html('');
