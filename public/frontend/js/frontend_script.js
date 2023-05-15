@@ -12,16 +12,14 @@ $(document).ready(function() {
 
      // initFetchify();
        searchMapbox('address_map_1','');
-      function hideFirstStep(){
-        $("#nav-home").removeClass('active');
-        $("#nav-home").removeClass('show');
-        $("#na-home").removeClass('active');
-        $("#na-home").removeClass('show');
-      }
+     
+       
 
       $("body").on('click','.back_home_page',function() {
              
             let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');
+            // console.log('stepNumber', stepNumber);
+            $("#geocoder").find('.mapboxgl-ctrl-geocoder:gt(0)').remove();
             if(stepNumber == 1){
               $(".main_inner_section").removeClass('selected_bike_card_active')
               $("#nav-home").show();
@@ -29,8 +27,9 @@ $(document).ready(function() {
               $("#nav-profile").hide();
               $("#na-home").hide();
               $("#nav-contact").hide();
+              
             }else if(stepNumber == 2){
-             // hideFirstStep();
+             
               $("#nav-home").hide();
               $("#nav-profile").hide();
               $("#na-home").show();
@@ -94,6 +93,29 @@ $(document).ready(function() {
            
       });
 
+      
+      $("body").on('click','.confim_address_btn',function() {
+          let status = true;
+          $(".search_address_text").html('');
+          let address = $(".mapboxgl-ctrl-geocoder--input").val();
+          let apartmentNumber = $(".apartment_input").val();
+          if($.trim(address) === ""){
+            toastr.error('Please enter address!', 'Error!');
+            status = false;
+          }
+          if(status){
+               if($.trim(apartmentNumber) != ""){
+                $(".search_address_text").html(`Flat ${apartmentNumber} , ${address}`);
+               }else {
+                $(".search_address_text").html(`${address}`);
+               }
+             
+          }
+
+          console.log('apartmentNumber', apartmentNumber , address);
+
+
+      });
       $("body").on('click','.c2a_results li',function() {
             let address = $(this).text();
             $(".search_address_input").val(address);
@@ -102,20 +124,20 @@ $(document).ready(function() {
             getLatLongByAddress(address, function(result){
                latLong = result;
               setTimeout(()=> {
-                showMapAddress('address_map_1', latLong);
-                showMapAddress('address_map_2', latLong);
+                //showMapAddress('address_map_1', latLong);
+                //showMapAddress('address_map_2', latLong);
               },500);
             });
       });
       $("body").on('click','.address_step_tab_button', function(e) {
           e.preventDefault(); 
-         
+          $(".confim_address_btn").click();
           let isAddrValidate = addressValidate();
           if(isAddrValidate){
             let latLong = JSON.parse($("#latlang").val());
             showUserProfileStep();
-            showMapAddress('address_map_1',latLong);
-            searchMapbox('address_map_1',latLong);
+            //showMapAddress('address_map_1',latLong);
+              searchMapbox('address_map_1',latLong);
             stepNumber  = 2;
           }
       });
@@ -194,7 +216,7 @@ $(document).ready(function() {
       $(".home_bang_type_text_capital").text(bangText);
        userBangObj.address = address;
        if($.trim(address) == ""){
-           toastr.error('Please enter address!', 'Error!');
+           //toastr.error('Please enter address!', 'Error!');
            status = false;
        }
        return status;
@@ -312,8 +334,7 @@ function showMapAddress(containerId, latLong){
 
 function searchMapbox(container_dev,latLong){
  
-   let latitudeLongitude = latLong;
-   console.log('latLong', latLong);
+   let latitudeLongitude = latLong;;
   if(latLong == ""){
     latitudeLongitude =  [-79.4512, 43.6568];
   }
@@ -335,11 +356,10 @@ function searchMapbox(container_dev,latLong){
         mapboxgl: mapboxgl
     });
     geocoder.on('result', (event) => {
-      console.log('bbb ', event);
       let placeName =  event.result.place_name;
       let latLong = event.result.geometry.coordinates;
       $("#latlang").val(JSON.stringify(latLong));
-      $(".search_address_text").text(placeName);
+     // $(".search_address_text").text(placeName);
       //map.getSource('single-point').setData(event.result.geometry);
       });
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));

@@ -339,8 +339,12 @@
               </div>
               <form>
                 <div>
-                  {{-- <input type="text" name="search_address" class="form-select1 form-select search_address_input" id="search_box_input" placeholder="Find address"/> --}}
                   <div id="geocoder" class="geocoder w-100 shadow-0 form-select1 form-select search_address_input"></div>
+                  <input type="text" name="search_address" class="form-select1  apartment_input" placeholder="Enter apartment/flat number"/>
+
+                  <div class="nav MultiTab justify-content-center mx-auto" >
+                    <button class="form-btn border-0 w-100 mb-4 confim_address_btn"  type="button" role="tab" >Confirm Address</button>
+                  </div>
                 </div>
                 <div class="textareaSec">
                   <div class="d-flex">
