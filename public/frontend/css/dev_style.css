@@ -41,6 +41,7 @@
 }
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {
   top: 30px!important;
+ background:none!important;
 }
 .mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder .suggestions {
   box-shadow: 0 0 0px 0px rgba(0,0,0,.1)!important;
@@ -72,3 +73,4 @@
     font-size: 15px  !important;
    }
 }
+
