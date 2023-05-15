@@ -60,7 +60,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>    
-    <script src="{{asset('frontend/js/frontend_script.js')}}"></script>
+    <script src="{{asset('frontend/js/frontend_script.js?v=10000')}}"></script>
     <!-- <script src="https://unpkg.com/swiper/js/swiper-scrollbar.min.js"></script> -->
     
     <!-- Mobile Navigation End -->
