@@ -142,11 +142,22 @@ $(document).ready(function() {
           $(".confim_address_btn").click();
           let isAddrValidate = addressValidate();
           if(isAddrValidate){
-            let latLong = JSON.parse($("#latlang").val());
-            showUserProfileStep();
-            //showMapAddress('address_map_1',latLong);
-              searchMapbox('address_map_1',latLong);
-            stepNumber  = 2;
+          
+            validatePostalCode((result)=> {
+              let latLong = JSON.parse($("#latlang").val());
+               console.log('**************** ', result);
+               if(result.is_valid_postal_code) {
+                  showUserProfileStep();
+                  searchMapbox('address_map_1',latLong);
+                  stepNumber  = 2;
+               }else {
+                  toastr.error('The bangs aren’t available in this postal code !', 'Error!');
+                  return false;
+               }
+            
+
+            })
+          
           }
       });
 
@@ -215,6 +226,30 @@ $(document).ready(function() {
            $("#nav-contact").removeClass('fade')
      }
  
+     function extractValidPostalCode(){
+        let matchPostalCode = "";
+        let address = $(".mapboxgl-ctrl-geocoder--input").val();
+        const w2Match = address.match(/W2 /i);
+        if (w2Match) {
+            matchPostalCode = w2Match[0];
+        }
+        return matchPostalCode;
+     }
+     function validatePostalCode(callback){
+        let postalCode = extractValidPostalCode(); 
+        let obj = {};
+        obj.postalCode = postalCode;
+        $.ajax({
+          url: base_url+"/postal_code/verification",
+          method: 'POST',
+          data: JSON.stringify(obj),
+          contentType: "application/json",
+          success: function(response){ 
+            callback(response);
+          }
+        });
+
+     }
      function addressValidate(){
        let status = true;
        let address = $(".search_address_text").text();

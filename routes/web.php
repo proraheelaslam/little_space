@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('frontend.pages.home.home');
 });
 Route::post('/bang_request/submit', [HomeController::class,'submitBangRequest']);
+Route::post('/postal_code/verification', [HomeController::class,'verifyPostalCode']);
 
