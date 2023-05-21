@@ -12,7 +12,7 @@ $.ajaxSetup({
 $(document).ready(function() {
 
     
-      //.verification-code input[type=text]
+      
       $("body").on('keyup','.verification-bang--inputs input', function() {
           $(".verification-bang--inputs input").each(function (i) {
             verificationCode[i] = $(".verification-bang--inputs input[type=number]")[i].value; 
@@ -35,15 +35,14 @@ $(document).ready(function() {
           activateBang($(this));
           
       });
-      $("body").on('keypress','.numbersOnly', function(e) {
-        var inputValue = e.target.value;
-        var sanitizedValue = inputValue.replace(/[^\d,]/g, '');
-        if (inputValue !== sanitizedValue) {
-          e.target.value = sanitizedValue;
+      $("body").on('input','.numbersOnlyOne', function(e) {
+        if ($(this).val().length > 1) {
+          $(this).val($(this).slice(0, 1));
         }
       });
 
-       searchMapbox('address_map_1','');
+
+       
       $("body").on('click','.back_home_page',function() {
              
             let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');

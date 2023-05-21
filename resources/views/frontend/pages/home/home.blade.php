@@ -587,14 +587,9 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
 @endsection
 @section('script')
+<script>
+  searchMapbox('address_map_1','');
+</script>
 @endsection

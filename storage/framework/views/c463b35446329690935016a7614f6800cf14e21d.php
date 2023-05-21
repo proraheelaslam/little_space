@@ -22,11 +22,11 @@
               </div>
               <h5 class="mb-0">Enter your BANG!'S ID</h5>
               <div class="d-flex justify-content-between align-items-center py-4 my-md-4 verification-bang--inputs">
-                <input type="number" maxlength="1" class="numbersOnly" />
-                <input type="number" maxlength="1" class="numbersOnly" />
-                <input type="number" maxlength="1" class="numbersOnly" />
-                <input type="number" maxlength="1" class="numbersOnly" />
-                <input type="number" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnlyOne" />
+                <input type="number" maxlength="1" class="numbersOnlyOne" />
+                <input type="number" maxlength="1" class="numbersOnlyOne" />
+                <input type="number" maxlength="1" class="numbersOnlyOne" />
+                <input type="number" maxlength="1" class="numbersOnlyOne" />
               </div>
             
               <div class="">

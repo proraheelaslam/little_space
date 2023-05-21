@@ -596,5 +596,8 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
+<script>
+  searchMapbox('address_map_1','');
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('frontend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\little_space\resources\views/frontend/pages/home/home.blade.php ENDPATH**/ ?>
