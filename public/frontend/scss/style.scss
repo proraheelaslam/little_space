@@ -761,7 +761,7 @@ body {
         color: #FEDD02;
         font-family: 'Poppins', sans-serif;
     }
-    input[type="text"]{
+    input[type="text"], input[type="number"]{
         width: 98px;
         height: 82px;
         border-radius: 8px;
@@ -779,6 +779,10 @@ body {
     }
     .bnrimg {
         width: 80%;
+    }
+    .activation_completed {
+        background: #FEDD02;
+        color: #000;
     }
 
 }
@@ -799,6 +803,11 @@ body {
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
         color: #FEDD02;
     }
+    .activation_completed {
+        background: #DA3631;
+        color: #fff;
+    }
+
 }
 
 @media only screen and (max-width:767px) {

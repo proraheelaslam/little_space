@@ -23,15 +23,15 @@
               </div>
               <h5 class="mb-0">Enter your BANG!'S ID</h5>
               <div class="d-flex justify-content-between align-items-center py-4 my-md-4 verification-bang--inputs">
-                <input type="text" maxlength="1" class="numbersOnly" />
-                <input type="text" maxlength="1" class="numbersOnly" />
-                <input type="text" maxlength="1" class="numbersOnly" />
-                <input type="text" maxlength="1" class="numbersOnly" />
-                <input type="text" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnly" />
+                <input type="number" maxlength="1" class="numbersOnly" />
               </div>
             
               <div class="">
-                <button class="btnLink border-0 activate_bang_button">Activate</button>
+                <button class="btnLink border-0 activate_bang_button disabled_button">Activate</button>
               </div>
             </div>
           </div>

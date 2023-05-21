@@ -15,7 +15,7 @@ $(document).ready(function() {
       //.verification-code input[type=text]
       $("body").on('keyup','.verification-bang--inputs input', function() {
           $(".verification-bang--inputs input").each(function (i) {
-            verificationCode[i] = $(".verification-bang--inputs input[type=text]")[i].value; 
+            verificationCode[i] = $(".verification-bang--inputs input[type=number]")[i].value; 
             $('#verificationBangCode').val(Number(verificationCode.join('')));
             //console.log( $('#verificationCode').val() );
           });
@@ -36,9 +36,10 @@ $(document).ready(function() {
           
       });
       $("body").on('keypress','.numbersOnly', function(e) {
-        var charCode = (e.which) ? e.which : e.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 44) {
-          e.preventDefault();
+        var inputValue = e.target.value;
+        var sanitizedValue = inputValue.replace(/[^\d,]/g, '');
+        if (inputValue !== sanitizedValue) {
+          e.target.value = sanitizedValue;
         }
       });
 
@@ -442,8 +443,10 @@ function activeBangNumberComplete(){
 
     let bangId = $("#verificationBangCode").val();
     $(".activate_bang_button").removeClass('activation_completed');
+    $(".activate_bang_button").addClass('disabled_button');
     if(bangId.length == 5){
         $(".activate_bang_button").addClass('activation_completed');
+        $(".activate_bang_button").removeClass('disabled_button');
     }
 
 
