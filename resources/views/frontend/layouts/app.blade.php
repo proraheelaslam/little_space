@@ -27,8 +27,8 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
     <link href='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="{{asset('frontend/scss/style.css')}} " />
-    <link rel="stylesheet" href="{{asset('frontend/css/dev_style.css')}} " />
+    <link rel="stylesheet" href="{{asset('frontend/scss/style.css?v=100')}} " />
+    <link rel="stylesheet" href="{{asset('frontend/css/dev_style.css?v=100')}} " />
  
     
     <script>
@@ -60,7 +60,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>    
-    <script src="{{asset('frontend/js/frontend_script.js?v=10000')}}"></script>
+    <script src="{{asset('frontend/js/frontend_script.js?v=100')}}"></script>
     <!-- <script src="https://unpkg.com/swiper/js/swiper-scrollbar.min.js"></script> -->
     
     <!-- Mobile Navigation End -->
