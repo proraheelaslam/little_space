@@ -15,8 +15,10 @@ class HomeController extends Controller
     //
     public function submitBangRequest(Request $request){
         
+        //$toEmail = 'admin@getmyhomesbang.co.uk';
+        $toEmail = 'raheelaslam548@gmail.com';
         $userData = $request->all();
-        Mail::to('admin@getmyhomesbang.co.uk')->send(new BangRequestEmail($userData));
+        Mail::to($toEmail)->send(new BangRequestEmail($userData));
         $bang = new Bang();
         $bang->name = "";
         $bang->type = $request->bang_type;

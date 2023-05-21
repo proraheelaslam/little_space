@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\BangController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,6 @@ Route::get('/', function () {
 });
 Route::post('/bang_request/submit', [HomeController::class,'submitBangRequest']);
 Route::post('/postal_code/verification', [HomeController::class,'verifyPostalCode']);
+Route::get('/bang/activation', [BangController::class,'showActivateBang']);
+Route::post('/bang_request/verification', [BangController::class,'verifyBangId']);
 

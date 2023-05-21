@@ -719,18 +719,96 @@ body {
         }
     }
 }
+.fullheight {
+    height: 100vh;
+}
+.stepcol3 {
+    background: #DA3631;
+    padding: 120px 0;
+    color: #fff;
+    h3 {
+        line-height: 68px;
+        margin-bottom: 7px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        font-family: 'DM Sans', sans-serif;
+        margin-bottom: 5px;
+    }
 
+    h4 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height:51px;
+        text-align: center;
+        font-family: 'DM Sans', sans-serif;
+    }
+    h5 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height:51px;
+        text-align: center;
+        font-family: 'DM Sans', sans-serif;
+    }
+    .btnLink {
+        width: 100%;
+        height: 82px;
+        background: #000000;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 40px;
+        color: #FEDD02;
+        font-family: 'Poppins', sans-serif;
+    }
+    input[type="text"]{
+        width: 98px;
+        height: 82px;
+        border-radius: 8px;
+        border: 0px solid #000;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 46px;
+        color: #000000;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin: 0 10px;
+        &:focus{
+            outline: none;
+        }
+    }
+    .bnrimg {
+        width: 80%;
+    }
+
+}
+.secimg {
+    display: none;
+}
+.stepcol4 {
+    background: #FEDD02;
+    color: #000;
+    .fisrtimg {
+        display: none;
+    }
+    .secimg {
+        display: block;
+    }
+    .btnLink {
+        background: #000000;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+        color: #FEDD02;
+    }
+}
 
 @media only screen and (max-width:767px) {
     .header {
         height: 70px;
     }
-
     .bang_type_image {
         margin-bottom: 20px;
         padding: 0 20px;
     }
-
     .TopSec {
         padding-top: 22px;
 
@@ -746,11 +824,9 @@ body {
             }
         }
     }
-
     .backlink {
         margin-bottom: 20px;
     }
-
     .centerSec {
         .BtmSec {
             padding: 0 20px 15px;
@@ -784,7 +860,6 @@ body {
             }
         }
     }
-
     .LastSec {
         padding: 26px 0 0;
 
@@ -854,7 +929,6 @@ body {
         }
 
     }
-
     .form-btn {
         background: #DA3631;
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
@@ -863,15 +937,12 @@ body {
         font-size: 20px;
         color: #fff;
     }
-
     .Faqs .accordion {
         width: 100%;
     }
-
     .footer {
         height: 57px;
     }
-
     .Faqs {
         display: none;
 
@@ -880,21 +951,17 @@ body {
             line-height: 45px;
         }
     }
-
     .accordion-item {
         border: 0px solid #000;
     }
-
     .accordion-button::after {
         background-size: 1rem;
     }
-
     .Faqs h3 button {
         font-size: 15px;
         line-height: 21px;
         font-weight: 400;
     }
-
     .faqtop {
         display: block !important;
 
@@ -902,15 +969,12 @@ body {
             font-size: 15px !important;
         }
     }
-
     .Faqs .accordion .accordion-button {
         height: 40px;
     }
-
     .Faqs .accordion .accordion-item {
         margin-bottom: 16px;
     }
-
     .banner {
         .accordion-button {
             margin-bottom: 20px;
@@ -928,7 +992,6 @@ body {
             }
         }
     }
-
     .banner1 {
         .accordion-button {
             margin-bottom: 20px;
@@ -946,7 +1009,6 @@ body {
             }
         }
     }
-
     .LastSec2 {
         padding-bottom: 0px;
 
@@ -1003,20 +1065,17 @@ body {
             }
         }
     }
-
     .form-btn2 {
         width: 100%;
         font-size: 20px;
         height: 54px;
         margin-bottom: 30px;
     }
-
     .Faqs1 {
         display: block !important;
         background: #DA3631;
         padding-bottom: 0px !important;
     }
-
     .MdlSec1 {
         height: 70px;
         padding: 0px 19px;
@@ -1027,20 +1086,16 @@ body {
             margin: 0;
         }
     }
-
     br {
         display: contents;
     }
-
     .ps-6 {
         padding-left: 30px;
         padding-right: 30px;
     }
-
     .ml-2 {
         margin-left: -22px;
     }
-
     .MainArea {
         padding: 21px 25px;
 
@@ -1060,12 +1115,10 @@ body {
             margin-top: 0px;
         }
     }
-
     .customtop {
         text-align: left !important;
         margin: 0 !important;
     }
-
     .MainArea2 {
         background: #000;
         padding: 54px 25px 70px;
@@ -1083,7 +1136,6 @@ body {
             margin: 0;
         }
     }
-
     .stepcol {
         padding: 30px 0 60px;
 
@@ -1131,7 +1183,6 @@ body {
         }
 
     }
-
     .stepcol2 {
         background: #FEDD02;
         color: #000;
@@ -1145,7 +1196,6 @@ body {
             color: #fff !important;
         }
     }
-
     .worksec {
         background: #1E1E1E;
         padding: 80px 20px 80px;
@@ -1175,7 +1225,6 @@ body {
 
         }
     }
-
     .navbar-collapse {
         background: #000;
         padding: 20px 30px !important;
@@ -1189,25 +1238,20 @@ body {
             }
         }
     }
-
     .customtop {
         h2 {
             text-align: center;
         }
     }
-
     .mblcenter {
         button {
             margin: 0 auto;
         }
     }
-
     .mapimg {
         width: 100% !important;
         height: 210px !important;
     }
-
-
     .selected_bike_card_active{
         .Faqs2{
             padding: 0!important;
@@ -1260,5 +1304,49 @@ body {
             display: block!important;
         }
     }
+    .stepcol3 {
+        padding: 30px 0 70px;
+        h3 {
+            line-height: 52px;
+            font-size: 26px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-family: 'Kievit bold';
+            margin: 0;
+        }
+        h4 {
+            font-size: 36px;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Kievit bold';
+        }
+        h5{
+            font-weight: 500;
+            font-size: 16px;
+            line-height:23px;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .btnLink {
+            height: 54px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        input[type="text"]{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 0 2px;
+        }
+        .bnrimg {
+            width: 100%;
+        }
+    
+    }
+    .fullheight {
+        height: 100%;
+    }
 
 }
+

@@ -2,6 +2,7 @@ let userBangObj = {};
 const accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
 let latLong = [-21.92661562, 64.14356426];
 let stepNumber = 1;
+var verificationCode = [];
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -10,11 +11,38 @@ $.ajaxSetup({
 
 $(document).ready(function() {
 
-     // initFetchify();
-       searchMapbox('address_map_1','');
-     
+    
+      //.verification-code input[type=text]
+      $("body").on('keyup','.verification-bang--inputs input', function() {
+          $(".verification-bang--inputs input").each(function (i) {
+            verificationCode[i] = $(".verification-bang--inputs input[type=text]")[i].value; 
+            $('#verificationBangCode').val(Number(verificationCode.join('')));
+            //console.log( $('#verificationCode').val() );
+          });
+          if ($(this).val() > 0) {
+            if (event.key == 1 || event.key == 2 || event.key == 3 || event.key == 4 || event.key == 5 || event.key == 6 || event.key == 7 || event.key == 8 || event.key == 9 || event.key == 0) {
+              $(this).next().focus();
+            }
+          }else {
+            if(event.key == 'Backspace'){
+                $(this).prev().focus();
+            }
+          }
+          activeBangNumberComplete();
+      });
        
+      $("body").on('click','.activate_bang_button', function(e) { 
+          activateBang($(this));
+          
+      });
+      $("body").on('keypress','.numbersOnly', function(e) {
+        var charCode = (e.which) ? e.which : e.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 44) {
+          e.preventDefault();
+        }
+      });
 
+       searchMapbox('address_map_1','');
       $("body").on('click','.back_home_page',function() {
              
             let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');
@@ -407,4 +435,45 @@ function searchMapbox(container_dev,latLong){
       });
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+}
+
+// activation bang
+function activeBangNumberComplete(){
+
+    let bangId = $("#verificationBangCode").val();
+    $(".activate_bang_button").removeClass('activation_completed');
+    if(bangId.length == 5){
+        $(".activate_bang_button").addClass('activation_completed');
+    }
+
+
+}
+
+function activateBang(obj){
+
+  let bangId = $("#verificationBangCode").val();
+  let bangType = $("#requestBangType").val();
+  let id = $("#requestBangId").val();
+  $(obj).addClass('disable_class');  
+  let objData = {};
+  objData.bangId = bangId;
+  objData.type = bangType;
+  objData.id = id;
+  $.ajax({
+     url: base_url+"/bang_request/verification",
+     method: 'POST',
+     data: JSON.stringify(objData),
+     contentType: "application/json",
+     success: function(response){ 
+           $(obj).removeClass('disable_class'); 
+           if(response.status) {
+            toastr.success(response.message, 'Thanks!');
+           }else {
+            toastr.error(response.message, 'Error!');
+           }
+          
+           
+           
+     }
+   });
 }
