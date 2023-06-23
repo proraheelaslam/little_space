@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Frontend\BangController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +13,40 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
 
 Route::get('/', function () {
     return view('frontend.pages.home.home');
 });
 Route::post('/bang_request/submit', [HomeController::class,'submitBangRequest']);
-Route::post('/postal_code/verification', [HomeController::class,'verifyPostalCode']);
-Route::get('/bang/activation', [BangController::class,'showActivateBang']);
-Route::post('/bang_request/verification', [BangController::class,'verifyBangId']);
 
+
+
+Route::get('/login', [App\Http\Controllers\Admin\LoginController::class, 'showLogin'])->name('login');
+Route::get('/email', [App\Http\Controllers\Admin\DashboardController::class, 'emailTemplate']);
+
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    Route::get('/login', [App\Http\Controllers\Admin\LoginController::class, 'showLogin'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Admin\LoginController::class, 'login'])->name('login.attempt');
+
+    Route::group(['middleware' => 'auth'], function () { 
+         
+        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/logout', [App\Http\Controllers\Admin\DashboardController::class, 'logout'])->name('logout');
+ 
+        // Bang
+        Route::get('/bangs', [App\Http\Controllers\Admin\BangController::class, 'index'])->name('bangs');
+        Route::get('/bangs/sendemail/{id}', [App\Http\Controllers\Admin\BangController::class, 'sendEmail'])->name('bang.sendemail'); 
+
+        Route::get('/bangs/sendsms/{id}', [App\Http\Controllers\Admin\BangController::class, 'sendMessage'])->name('bang.sendsms'); 
+         
+    });
+
+});
+
+
+Route::get('/chatboot', function () {
+    return view('frontend.pages.home.chatboot');
+});

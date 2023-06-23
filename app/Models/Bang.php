@@ -11,5 +11,9 @@ class Bang extends Model
 
     protected $fillable = ['name','type','bang_id'];
 
+    public function user()
+    {
+      return $this->belongsTo(User::class,'id','bang_id');
+    }
     
 }

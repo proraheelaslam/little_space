@@ -1,0 +1,31 @@
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.sortstep {
+    padding-left: 0px !important;
+}
+.remove_li_bullets {
+    list-style: none;
+}
+.li_sort_css {
+    background-color: #d3d3d300;
+    border: 1px solid #00000052;
+    padding: 5px;
+    box-shadow: inset 1px 1px 8px 1px lightgrey;
+    padding-left: 20px;
+}
+
+.project-detail-title {
+    color: #e94e1b;
+}
+
+.project-detail-title {
+    color: #e94e1b;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed #e94e1b87;
+}
+
+.color-main{
+    color: #e94e1b;
+}

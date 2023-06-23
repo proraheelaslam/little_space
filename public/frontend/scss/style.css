@@ -23,7 +23,7 @@
   font-display: swap;
 }
 :root {
-  --primary: #DA3631;
+  --primary: #FFF299;
   --secondary: #e8ecdc;
 }
 
@@ -70,8 +70,8 @@ body {
 
 /****other page ***/
 .TopSec {
-  background: #000;
-  padding-top: 82px;
+  background: #FFF299;
+  padding-top: 40px;
 }
 .TopSec .MultiTab {
   width: 1040px;
@@ -95,8 +95,8 @@ body {
   margin-right: 40px;
 }
 .TopSec .MultiTab li.active {
-  border-bottom: 2px solid #DA3631;
-  color: #fff !important;
+  border-bottom: 4px solid #DA3631;
+  color: #000;
 }
 .TopSec .MdlSec {
   background: #FCE657;
@@ -109,9 +109,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.checkbtn {
+  display: none !important;
+}
+
 .centerSec {
-  background: #000;
-  padding-top: 30px;
+  background: #FFF299;
+  padding-top: 64px;
 }
 .centerSec .BtmSec {
   padding-bottom: 64px;
@@ -122,6 +126,19 @@ body {
   margin-top: 23px;
   line-height: 91px;
   font-weight: 500;
+  position: relative;
+}
+.centerSec .BtmSec h4::after {
+  position: absolute;
+  content: "";
+  width: 390px;
+  height: 6px;
+  background: #FEDD00;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -15px;
 }
 .centerSec .BtmSec h5 {
   font-size: 50px;
@@ -139,6 +156,15 @@ body {
   margin-top: 23px;
 }
 
+.bg-draft {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(254, 221, 0, 0.49) 100%);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 160px 80px;
+  border: 1px solid #fff;
+}
+
 .backlink {
   margin-bottom: 32px;
 }
@@ -146,69 +172,84 @@ body {
   font-size: 20px;
   line-height: 28px;
   font-weight: 500;
-  color: #fff;
   margin: 0;
 }
 
+.selectinput select {
+  width: 100%;
+  border-radius: 10px;
+  height: 60px;
+  font-weight: 400;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  padding: 0 35px;
+  margin-bottom: 30px;
+  border: 1px solid #000;
+  background: none;
+}
+
 .LastSec {
-  padding: 185px 0;
+  padding: 85px 0 118px;
 }
 .LastSec h4 {
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 68px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
   font-family: "DM Sans", sans-serif;
-  margin-bottom: 4px;
+  margin-bottom: 25px;
 }
 .LastSec h5 {
   font-weight: 500;
-  font-size: 36px;
+  font-size: 24px;
   font-family: "DM Sans", sans-serif;
-  line-height: 51px;
-  margin-bottom: 40px;
+  line-height: 34px;
+  margin-bottom: 0px;
+  color: #000;
 }
 .LastSec h6 {
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 30px;
   font-family: "Poppins", sans-serif;
-  line-height: 34px;
+  line-height: 159%;
 }
 .LastSec form {
-  width: 650px;
+  width: 457px;
   margin: 0 auto;
 }
 .LastSec .form-select1 {
   width: 100%;
-  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
-  border-radius: 28px;
-  height: 98px;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 45px;
+  border-radius: 10px;
+  height: 60px;
+  font-weight: 400;
+  font-size: 22px;
   font-family: "Poppins", sans-serif;
-  padding: 0 56px;
-  margin-bottom: 40px;
-  border: 0px solid #000;
+  padding: 0 40px;
+  margin-bottom: 30px;
+  border: 1px solid #000;
+  background: none;
 }
 .LastSec select option {
   font-size: 20px;
+}
+.LastSec img {
+  margin-top: -20px;
 }
 .LastSec .form-select1 {
   background-size: 63px 24px;
 }
 .LastSec .textareaSec {
-  height: 230px;
+  height: 165px;
   width: 100%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 28px;
-  background: #fff;
+  background: #FEDD00;
+  border-radius: 10px;
   margin-bottom: 40px;
   padding: 48px 38px;
 }
 .LastSec .textareaSec h3 {
   font-weight: 500;
-  font-size: 32px;
-  line-height: 45px;
+  font-size: 24px;
+  line-height: 36px;
   font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
 }
@@ -217,17 +258,18 @@ body {
 }
 
 .form-btn {
-  background: radial-gradient(50% 50% at 50% 50%, #FEE544 0%, #FEDD00 100%);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 16px;
-  height: 109px;
-  font-size: 40px;
+  background: #DA3631;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 100px;
+  font-size: 36px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 
 .form-btn2 {
-  background: #DA3631;
+  background: #FFF299;
   box-shadow: 0px 4.5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   height: 82px;
@@ -253,7 +295,6 @@ body {
   color: #fff;
 }
 .LastSec2 ul li {
-  text-align: left;
   font-size: 24px;
   line-height: 34px;
   font-family: "Poppins", sans-serif;
@@ -262,10 +303,6 @@ body {
 }
 .LastSec2 ul li:nth-child(3) span::after {
   content: none;
-}
-.LastSec2 ul li b {
-  font-weight: 400;
-  width: 70%;
 }
 .LastSec2 ul li span {
   width: 50px;
@@ -281,15 +318,14 @@ body {
 .LastSec2 ul li span::after {
   content: "";
   position: absolute;
-  top: 48px;
+  top: 40px;
   left: 23px;
   width: 5px;
-  height: 55px;
+  height: 50px;
   background: #FEDE0D;
 }
 
-.formTabTwo input[type=text],
-.formTabTwo input[type=number] {
+.formTabTwo input[type=text], .formTabTwo input[type=number] {
   height: 82px;
   width: 100%;
   background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #DEDEDE 100%);
@@ -314,38 +350,32 @@ body {
 }
 
 .Faqs {
-  background: #000;
-  padding-top: 54px;
-  padding-bottom: 42px;
+  background: #FFF299;
+  padding-top: 45px;
+  padding-bottom: 80px;
+  border-top: 6px solid #FEDD00;
 }
 .Faqs h2 {
   font-family: "DM Sans", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 48px;
-  line-height: 68px;
-  margin-bottom: 23px;
+  line-height: 69px;
+  color: #000000;
 }
-.Faqs h3 button {
-  font-size: 29px;
-  line-height: 41px;
+.Faqs p {
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.7;
 }
-.Faqs .accordion {
-  width: 677px;
-}
-.Faqs .accordion .accordion-button {
-  height: 77px;
-}
-.Faqs .accordion .accordion-button:focus {
-  border: 0px solid #000 !important;
-  box-shadow: 0px 0px 0px 0px #000 !important;
-}
-.Faqs .accordion .accordion-button::after {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAzMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljg5OTkgMTguMDQ1TDAuMzQ5OTE1IDMuNDk1TDMuNzQ0OTEgMC4wOTk5OTg1TDE0Ljg5OTkgMTEuMjU1TDI2LjA1NDkgMC4wOTk5OTg1TDI5LjQ0OTkgMy40OTVMMTQuODk5OSAxOC4wNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) !important;
-}
-.Faqs .accordion .accordion-item {
-  margin-bottom: 30px;
+.Faqs h3 {
+  font-weight: 500;
+  font-size: 29.1px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 /**** home ****/
@@ -516,202 +546,39 @@ body {
 
 /**** footer ***/
 .footer {
-  height: 113px;
-  background: linear-gradient(180deg, #413636 0%, #1B1717 76.91%, #000000 100%);
+  height: 66px;
+  background: #000;
 }
 .footer p {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 66px;
   font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
 .Faqs1 {
   display: none;
 }
 
-.navbar-toggler:focus {
-  box-shadow: 0px 0px 0px 0px #000;
-}
-
-.accordion-item {
-  border: 0px solid #000 !important;
-}
-
-.faqtop button {
-  font-size: 26px !important;
-}
-
-.finish_steps_button {
-  background: #FEDD02 !important;
-  color: #000 !important;
-}
-
-.first {
-  display: block;
-}
-
-.secound {
-  display: none;
-}
-
-.selected_bike_card_active .centerSec, .selected_bike_card_active .TopSec, .selected_bike_card_active .Faqs3, .selected_bike_card_active .formTabTwo {
-  background: #DA3631 !important;
-}
-.selected_bike_card_active .bg-primary, .selected_bike_card_active .Faqs2, .selected_bike_card_active .Faqs1 {
-  background: #FEDD02 !important;
-}
-.selected_bike_card_active .LastSec .text-white, .selected_bike_card_active .Faqs .text-white {
-  color: #000 !important;
-}
-.selected_bike_card_active .form-btn {
-  background: #DA3631 !important;
-}
-.selected_bike_card_active .LastSec {
-  padding: 185px 0 50px;
-}
-.selected_bike_card_active .faqtop .accordion .accordion-button::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-}
-.selected_bike_card_active .Faqs3 .text-white {
-  color: #fff !important;
-}
-.selected_bike_card_active .LastSec2 .text-white {
-  color: #000 !important;
-}
-.selected_bike_card_active .LastSec2 ul li span {
-  background: #DA3631 !important;
-}
-.selected_bike_card_active .LastSec2 ul li span::after {
-  background: #DA3631 !important;
-}
-.selected_bike_card_active .TopSec .MultiTab li {
-  color: #000;
-  border-bottom: 2px solid #000;
-}
-.selected_bike_card_active .TopSec .MultiTab li.active {
-  border-bottom: 2px solid #FCE657 !important;
-}
-.selected_bike_card_active .LastSec2 h3 {
-  font-size: 32px;
-  line-height: 45px;
-  color: #000;
-}
-.selected_bike_card_active .LastSec2 .formTabTwo {
-  background: none !important;
-  color: #000;
-}
-.selected_bike_card_active .LastSec2 .formTabTwo h3, .selected_bike_card_active .LastSec2 .formTabTwo span {
-  color: #000;
-  margin-bottom: 20px;
-}
-.selected_bike_card_active .LastSec2 ul li {
-  color: #000;
-  text-align: left;
-}
-.selected_bike_card_active .LastSec2 ul li span {
-  color: #fff;
-}
-.selected_bike_card_active .LastSec2 ul li b {
-  color: #000;
-  font-weight: 400;
-  width: 70%;
-}
-
-.fullheight {
-  height: 100vh;
-}
-
-.stepcol3 {
-  background: #DA3631;
-  padding: 120px 0;
-  color: #fff;
-}
-.stepcol3 h3 {
-  line-height: 68px;
-  margin-bottom: 7px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  font-family: "DM Sans", sans-serif;
-  margin-bottom: 5px;
-}
-.stepcol3 h4 {
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 51px;
-  text-align: center;
-  font-family: "DM Sans", sans-serif;
-}
-.stepcol3 h5 {
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 51px;
-  text-align: center;
-  font-family: "DM Sans", sans-serif;
-}
-.stepcol3 .btnLink {
-  width: 100%;
-  height: 82px;
-  background: #000000;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 40px;
-  color: #FEDD02;
-  font-family: "Poppins", sans-serif;
-}
-.stepcol3 input[type=text], .stepcol3 input[type=number] {
-  width: 98px;
-  height: 82px;
-  border-radius: 8px;
-  border: 0px solid #000;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 46px;
-  color: #000000;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  margin: 0 10px;
-}
-.stepcol3 input[type=text]:focus, .stepcol3 input[type=number]:focus {
-  outline: none;
-}
-.stepcol3 .bnrimg {
-  width: 80%;
-}
-.stepcol3 .activation_completed {
-  background: #FEDD02;
-  color: #000;
-}
-
-.secimg {
-  display: none;
-}
-
-.stepcol4 {
-  background: #FEDD02;
-  color: #000;
-}
-.stepcol4 .fisrtimg {
-  display: none;
-}
-.stepcol4 .secimg {
-  display: block;
-}
-.stepcol4 .btnLink {
-  background: #000000;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-  color: #FEDD02;
-}
-.stepcol4 .activation_completed {
-  background: #DA3631;
-  color: #fff;
-}
-
 @media only screen and (max-width: 767px) {
   .header {
     height: 70px;
+  }
+  .bg-draft {
+    padding: 20px 20px 0 20px;
+    border-radius: 0px;
+    background: none;
+    box-shadow: 0px 0px 0px 0px #000;
+    border-top: 6px solid #FEDD00;
+  }
+  .footer {
+    background: #FFF299;
+  }
+  .footer p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #000 !important;
   }
   .bang_type_image {
     margin-bottom: 20px;
@@ -731,7 +598,7 @@ body {
     margin: 0;
   }
   .backlink {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .centerSec .BtmSec {
     padding: 0 20px 15px;
@@ -826,9 +693,6 @@ body {
   .Faqs .accordion {
     width: 100%;
   }
-  .footer {
-    height: 57px;
-  }
   .Faqs {
     display: none;
   }
@@ -846,12 +710,6 @@ body {
     font-size: 15px;
     line-height: 21px;
     font-weight: 400;
-  }
-  .faqtop {
-    display: block !important;
-  }
-  .faqtop button {
-    font-size: 15px !important;
   }
   .Faqs .accordion .accordion-button {
     height: 40px;
@@ -892,18 +750,9 @@ body {
     font-size: 32px;
     line-height: 45px;
   }
-  .LastSec2 .formTabTwo h3 {
-    color: #fff;
-    margin-bottom: 20px;
-  }
   .LastSec2 ul li {
     font-size: 16px;
     line-height: 22px;
-    text-align: left;
-  }
-  .LastSec2 ul li b {
-    font-weight: 400;
-    width: 70%;
   }
   .LastSec2 .container {
     padding: 0;
@@ -913,8 +762,7 @@ body {
     padding: 28px 30px;
     margin-top: 30px;
   }
-  .LastSec2 .container .formTabTwo input[type=text],
-  .LastSec2 .container .formTabTwo input[type=number] {
+  .LastSec2 .container .formTabTwo input[type=text], .LastSec2 .container .formTabTwo input[type=number] {
     height: 54px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -1088,87 +936,44 @@ body {
     width: 100% !important;
     height: 210px !important;
   }
-  .selected_bike_card_active .Faqs2 {
-    padding: 0 !important;
-  }
-  .selected_bike_card_active .centerSec, .selected_bike_card_active .TopSec {
-    background: #000 !important;
-  }
-  .selected_bike_card_active .search_address_section .text-white {
-    color: #fff !important;
-  }
-  .selected_bike_card_active .form-btn, .selected_bike_card_active .form-btn2 {
-    background: radial-gradient(50% 50% at 50% 50%, #FEE544 0%, #FEDD00 100%) !important;
-    color: #000 !important;
-  }
-  .selected_bike_card_active .LastSec {
-    padding: 26px 0 0px;
-  }
-  .selected_bike_card_active .Faqs .accordion .accordion-button::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-  }
-  .selected_bike_card_active .Faqs .text-white {
-    color: #000 !important;
-  }
-  .selected_bike_card_active .faqtop .text-white {
-    color: #fff !important;
-  }
-  .selected_bike_card_active .faqtop .accordion .accordion-button::after {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAzMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljg5OTkgMTguMDQ1TDAuMzQ5OTE1IDMuNDk1TDMuNzQ0OTEgMC4wOTk5OTg1TDE0Ljg5OTkgMTEuMjU1TDI2LjA1NDkgMC4wOTk5OTg1TDI5LjQ0OTkgMy40OTVMMTQuODk5OSAxOC4wNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) !important;
-  }
-  .selected_bike_card_active .LastSec2 .formTabTwo {
-    background: #000 !important;
-  }
-  .selected_bike_card_active .LastSec2 .formTabTwo h3, .selected_bike_card_active .LastSec2 .formTabTwo span {
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  .selected_bike_card_active .first {
-    display: none !important;
-  }
-  .selected_bike_card_active .secound {
-    display: block !important;
-  }
-  .stepcol3 {
-    padding: 30px 0 70px;
-  }
-  .stepcol3 h3 {
-    line-height: 52px;
-    font-size: 26px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-family: "Kievit bold";
-    margin: 0;
-  }
-  .stepcol3 h4 {
-    font-size: 36px;
-    line-height: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Kievit bold";
-  }
-  .stepcol3 h5 {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: left;
-    padding-left: 10px;
-  }
-  .stepcol3 .btnLink {
-    height: 54px;
-    font-weight: 500;
-    font-size: 20px;
-  }
-  .stepcol3 input[type=text], .stepcol3 input[type=number] {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    margin: 0 2px;
-  }
-  .stepcol3 .bnrimg {
-    width: 100%;
-  }
-  .fullheight {
-    height: 100%;
-  }
+}
+.navbar-toggler:focus {
+  box-shadow: 0px 0px 0px 0px #000;
+}
+
+.inner-sec {
+  height: 150px;
+  background: #FEDD00;
+  border-radius: 10px;
+  padding: 35px 20px;
+}
+.inner-sec h3 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+.inner-sec a {
+  font-size: 30px;
+  line-height: 160%;
+  color: #DA3631;
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.top-border {
+  border-top: 6px solid #FEDD00;
+}
+
+.w-210 {
+  width: 475px !important;
+}
+.w-210 input {
+  font-size: 20px !important;
+  padding-left: 60px !important;
+}
+.w-210 svg {
+  position: absolute;
+  top: 18px;
+  left: 20px;
 }/*# sourceMappingURL=style.css.map */

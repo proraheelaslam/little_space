@@ -1,8 +1,7 @@
 let userBangObj = {};
 const accessToken = 'pk.eyJ1Ijoid29ybGR3IiwiYSI6ImNsZ2psd3RsdDBnbnQzY29iaHl1OWNrMjUifQ.gBsEkpBcRLSho6G60Qyc3w';
 let latLong = [-21.92661562, 64.14356426];
-let stepNumber = 1;
-var verificationCode = [];
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -11,71 +10,15 @@ $.ajaxSetup({
 
 $(document).ready(function() {
 
-    
-      
-      $("body").on('keyup','.verification-bang--inputs input', function() {
-          $(".verification-bang--inputs input").each(function (i) {
-            verificationCode[i] = $(".verification-bang--inputs input[type=number]")[i].value; 
-            $('#verificationBangCode').val(Number(verificationCode.join('')));
-            //console.log( $('#verificationCode').val() );
-          });
-          if ($(this).val() > 0) {
-            if (event.key == 1 || event.key == 2 || event.key == 3 || event.key == 4 || event.key == 5 || event.key == 6 || event.key == 7 || event.key == 8 || event.key == 9 || event.key == 0) {
-              $(this).next().focus();
-            }
-          }else {
-            if(event.key == 'Backspace'){
-                $(this).prev().focus();
-            }
-          }
-          activeBangNumberComplete();
-      });
-       
-      $("body").on('click','.activate_bang_button', function(e) { 
-          activateBang($(this));
-          
-      });
-      $("body").on('input','.numbersOnlyOne', function(e) {
-        if ($(this).val().length > 1) {
-          $(this).val($(this).slice(0, 1));
-        }
-      });
-
-
-       
+      initFetchify();
       $("body").on('click','.back_home_page',function() {
-             
-            let stepNo =  $("#nav-tabContent").find('li.active').attr('data-id');
-            // console.log('stepNumber', stepNumber);
-            $("#geocoder").find('.mapboxgl-ctrl-geocoder:gt(0)').remove();
-            if(stepNumber == 1){
-              $(".main_inner_section").removeClass('selected_bike_card_active')
-              $("#nav-home").show();
-              $("#nav-home").addClass('show');
-              $("#nav-profile").hide();
-              $("#na-home").hide();
-              $("#nav-contact").hide();
-
-            }else if(stepNumber == 2){
-             
-              $("#nav-home").hide();
-              $("#nav-profile").hide();
-              $("#na-home").show();
-              //$("#nav-home").removeClass('show');
-              stepNumber = 1;
-
-            }else if(stepNumber == 3){
-              $("#nav-home").hide();
-              $("#nav-profile").show();
-              $("#na-home").hide();
-              $("#nav-contact").hide();
-             // $("#nav-home").removeClass('show');
-              stepNumber = 2;
-            }
-           
+            $("#nav-home").addClass('active');
+            $("#nav-home").addClass('show');
+            //
+            $("#na-home").removeClass('active');
+            $("#na-home").removeClass('show');
       });
       $("body").on('click','.get_home_bang',function() { 
-          $(".main_inner_section").removeClass('selected_bike_card_active')
           let bangType = $(this).attr('data-type');
           $(".bang_type").val(bangType);
           let bikeServiceImg = base_url+"/frontend/images/bike-card-plain.png";
@@ -84,107 +27,42 @@ $(document).ready(function() {
           if(bangType == "bikeservice"){
             $(".bang_type_image").attr('src',bikeServiceImg);
           } 
-           userBangObj.bang_type = bangType;
-           $(".home_bang_type_text").text((bangType == "bikeservice" ? 'bike service' : 'tradesperson'));
-           stepNumber = 1;
-           $(".sel_card_heading").html(`So you need a plumber? <br/> No problem!`);
-           $(".sel_card_description").html(`The first price you should check is your home’s BANG! Price. Start by finding your home.`);
-           $(".tradeperson_bike_step_acc_1").html(`A BANG! is an an exclusive price for a local plumber, heating engineer or electrician. Don’t worry other trades are coming soon.`);
-           $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 tradesperson BANG! which can be used by you and the people you live with.`); 
-           $(".tradeperson_bike_step_acc_3").html(`We only partner with local experts so not only do you get a great price you can be assured that the work is carried out by approved and reliable tradespeople.`); 
-           $(".banner_step_3_text").text(`Your home's Tradesperson BANG! will arrive inside 24 hours!`);
-           $(".home_bang_type_text_3").text('TRADESPERSON');
-           if(bangType === "bikeservice"){
-               $(".main_inner_section").addClass('selected_bike_card_active');
-               $(".sel_card_heading").html(`Bike need a service? <br/> We’ve got you.`);
-               $(".sel_card_description").html(`When your bike needs a service the first price you should check is your home’s bike service BANG! for 2023.`);
-               $(".tradeperson_bike_step_acc_1").html(`A Bike Service BANG! is an exclusive price for 1 local bike service in 2023. If your bike needs a service this year make sure you check your home’s BANG! price first`);
-               $(".tradeperson_bike_step_acc_2").html(`Each year we allocate your home with 1 bike service BANG! which can be used by you and the people you live with.`); 
-               $(".tradeperson_bike_step_acc_3").html(`We partner up with expert local bike technicians to ensure you’re not just getting a fantastic price but you’re also getting a premium level bike service at the same time. After all, that’s what BANG! is all about.`); 
-               $(".banner_step_3_text").text(`Your home's Bike service BANG! will arrive inside 24 hours!`);
-          
-               $(".home_bang_type_text_3").text('BIKE SERVICE');
-            }
-           let bangText = bangTypeTexUpperCase(bangType);
-           $(".home_bang_type_text_capital").text(bangText);
-
-           
-           $('html, body').animate({ scrollTop: 0 }, 0);
-           // show hide page
-           $("#nav-home").removeClass('show');
-           $("#nav-home").removeClass('active');
-           $("#nav-home").hide();
-           // show step page
-           $("#na-home").show();
-           $("#na-home").addClass('show');
-           $("#na-home").addClass('active')
-           
+          userBangObj.bang_type = bangType;
+          let bangTypeText = bangTypeTexUpperCase(bangType);
+         // $(".request_bang_text").text(`You’re requesting the ${bangTypeText} BANG! for`);
+           $(".home_bang_type_text").text(bangType);
+           window.scrollTo(0, 0)
       });
 
-      
-      
-      $("body").on('keyup','.mapboxgl-ctrl-geocoder--input',function() {
-           let value = $(this).val();
-           console.log('value', value);
-           if($.trim(value) === ""){
-               $(".search_address_text").html('');
-           }
-      }); 
-      $("body").on('click','.confim_address_btn',function() {
-          let status = true;
-          $(".search_address_text").html('');
-          let address = $(".mapboxgl-ctrl-geocoder--input").val();
-          let apartmentNumber = $(".apartment_input").val();
-          if($.trim(address) === ""){
-            toastr.error('Please enter address!', 'Error!');
-            status = false;
-          }
-          if(status){
-               if($.trim(apartmentNumber) != ""){
-                $(".search_address_text").html(`Flat ${apartmentNumber} , ${address}`);
-               }else {
-                $(".search_address_text").html(`${address}`);
-               }
-             
-          }
-
-          console.log('apartmentNumber', apartmentNumber , address);
-
-
-      });
+    
       $("body").on('click','.c2a_results li',function() {
             let address = $(this).text();
+            
             $(".search_address_input").val(address);
             $(".search_address_text").text(address);
-           
+            $(".address_request_bang").text(address);
             getLatLongByAddress(address, function(result){
                latLong = result;
               setTimeout(()=> {
-                //showMapAddress('address_map_1', latLong);
-                //showMapAddress('address_map_2', latLong);
+                showMapAddress('address_map_1', latLong);
+                showMapAddress('address_map_2', latLong);
               },500);
             });
       });
       $("body").on('click','.address_step_tab_button', function(e) {
           e.preventDefault(); 
-          $(".confim_address_btn").click();
           let isAddrValidate = addressValidate();
-          if(isAddrValidate){
           
-            validatePostalCode((result)=> {
-              let latLong = JSON.parse($("#latlang").val());
-               console.log('**************** ', result);
-               if(result.is_valid_postal_code) {
-                  showUserProfileStep();
-                  searchMapbox('address_map_1',latLong);
-                  stepNumber  = 2;
-               }else {
-                  toastr.error('The bangs aren’t available in this postal code !', 'Error!');
-                  return false;
-               }
-            
-
-            })
+          if(isAddrValidate){
+            let address = $(".postal_code").val();
+            showUserProfileStep();
+            getLatLongByAddress(address, function(result){
+            latLong = result;
+             setTimeout(()=> {
+               showMapAddress('address_map_1', latLong);
+               showMapAddress('address_map_2', latLong);
+             },500);
+           });
           
           }
       });
@@ -192,13 +70,9 @@ $(document).ready(function() {
       $("body").on('click','.user_profile_step_button', function(e) {
           e.preventDefault(); 
           let isUserDetaiValidate = userDetailValidate();
-          
           if(isUserDetaiValidate){
             showMapOnUserDetailStep();
-           // showMapAddress('address_map_2', latLong);
-            let latLong = JSON.parse($("#latlang").val());
-            searchMapbox('address_map_2',latLong);
-            stepNumber = 3;
+            showMapAddress('address_map_2', latLong)
           }
       });
       $("body").on('click','.finish_steps_button', function(e) {
@@ -211,7 +85,7 @@ $(document).ready(function() {
     function bangTypeTexUpperCase(bangType){
       let bangTypeLabel = 'TRADESPERSON';
       if(bangType == "bikeservice"){
-        bangTypeLabel = 'Bike Service';
+        bangTypeLabel = 'BIKESERVICE';
       }
       return bangTypeLabel;
     } 
@@ -254,40 +128,13 @@ $(document).ready(function() {
            $("#nav-contact").removeClass('fade')
      }
  
-     function extractValidPostalCode(){
-        let matchPostalCode = "";
-        let address = $(".mapboxgl-ctrl-geocoder--input").val();
-        const w2Match = address.match(/W2 /i);
-        if (w2Match) {
-            matchPostalCode = w2Match[0];
-        }
-        return matchPostalCode;
-     }
-     function validatePostalCode(callback){
-        let postalCode = extractValidPostalCode(); 
-        let obj = {};
-        obj.postalCode = postalCode;
-        $.ajax({
-          url: base_url+"/postal_code/verification",
-          method: 'POST',
-          data: JSON.stringify(obj),
-          contentType: "application/json",
-          success: function(response){ 
-            callback(response);
-          }
-        });
-
-     }
      function addressValidate(){
        let status = true;
        let address = $(".search_address_text").text();
        $(".address_request_bang").text(address);
-       let bangType = $(".bang_type").val();
-       let bangText = bangTypeTexUpperCase(bangType);
-      $(".home_bang_type_text_capital").text(bangText);
        userBangObj.address = address;
        if($.trim(address) == ""){
-           //toastr.error('Please enter address!', 'Error!');
+           toastr.error('Please enter address!', 'Error!');
            status = false;
        }
        return status;
@@ -331,9 +178,10 @@ $(document).ready(function() {
     }
  
     // fetchify API 
-     function initFetchify() {
+     function initFetchifyOld() {
+     
          new clickToAddress({
-             accessToken: '0f17e-fd43c-31f0d-08f77',
+             accessToken: '72336-c68cb-b16f6-08f3c',
              dom: {
                  search:		'search_address',
                  town:		'town',
@@ -349,6 +197,7 @@ $(document).ready(function() {
              },
              showLogo: false,
              onResultSelected: function(c2a, elements, address){
+             
                  let locality = address.locality;
                  let province = address.province;
                  let country_name = address.country_name;
@@ -360,6 +209,31 @@ $(document).ready(function() {
              gfxMode: 2
          });
      }
+
+
+function initFetchify() {
+
+    new PostcoderAddress({
+      apikey: 'PCWFX-PBN9N-S6ZDE-G62EH', 
+      searchterm: '#txt_search', // query selector of the searchterm input field
+      addressselectioncontainer: '#address_selection_container', // container for the address selection drop down
+      noresultmessage: '#no_result_message',
+      country: '#txt_country',  // Country select list; leave blank if not using a country select list 
+      countrycode: '', // Hard code if not using a country select list; leave blank otherwise 
+      searchbutton: '#btn_search', 
+      organisation: '#txt_organsation',  // Leave blank if form does not have a separate organisation field 
+      addressline1: '#txt_addressline1', 
+      addressline2: '#txt_addressline2',  // Leave blank if form does not have an addressline2 
+      addressline3: '#txt_addressline3',  // Leave blank if form does not have an addressline3 
+      //addressline4: '',  // Leave blank if form does not have an addressline4
+      county: '', // Leave blank if form does not have a county
+      posttown: '#txt_posttown', 
+      postcode: '#txt_postcode' 
+  })
+
+ 
+
+  }
  
  
 function getLatLongByAddress(postalCode, callback){
@@ -369,7 +243,6 @@ function getLatLongByAddress(postalCode, callback){
         .then(response => response.json())
         .then(data => {
           // Handle the API response data here
-          console.log('data.features', data.features);
           if(data.features.length > 0){
             let corrdinates = data.features[0].center;
             callback(corrdinates)
@@ -388,94 +261,15 @@ function getLatLongByAddress(postalCode, callback){
 
 function showMapAddress(containerId, latLong){
   
-    // mapboxgl.accessToken = accessToken;
-    // const map = new mapboxgl.Map({
-    //     container: containerId, // container ID
-    //     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    //     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    //     center: latLong, // starting position [lng, lat]
-    //     zoom: 15// starting zoom
-    // });
-    // var marker = new mapboxgl.Marker( {
-    //     /* anchor: 'bottom' */
-    //   }).setLngLat(latLong).addTo(map);
-}
-
-
-
-function searchMapbox(container_dev,latLong){
- 
-   let latitudeLongitude = latLong;;
-  if(latLong == ""){
-    latitudeLongitude =  [-79.4512, 43.6568];
-  }
-  mapboxgl.accessToken = accessToken;
+    mapboxgl.accessToken = accessToken;
     const map = new mapboxgl.Map({
-        container: container_dev,
+        container: containerId, // container ID
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: latitudeLongitude,
-        //center: [-79.4512, 43.6568],
-        zoom: 15
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        center: latLong, // starting position [lng, lat]
+        zoom: 15// starting zoom
     });
     var marker = new mapboxgl.Marker( {
         /* anchor: 'bottom' */
-      }).setLngLat(latitudeLongitude).addTo(map);
-    // Add the control to the map.
-    const geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-    });
-    geocoder.on('result', (event) => {
-      let placeName =  event.result.place_name;
-      let latLong = event.result.geometry.coordinates;
-      $("#latlang").val(JSON.stringify(latLong));
-     // $(".search_address_text").text(placeName);
-      //map.getSource('single-point').setData(event.result.geometry);
-      });
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
-}
-
-// activation bang
-function activeBangNumberComplete(){
-
-    let bangId = $("#verificationBangCode").val();
-    $(".activate_bang_button").removeClass('activation_completed');
-    $(".activate_bang_button").addClass('disabled_button');
-    if(bangId.length == 5){
-        $(".activate_bang_button").addClass('activation_completed');
-        $(".activate_bang_button").removeClass('disabled_button');
-    }
-
-
-}
-
-function activateBang(obj){
-
-  let bangId = $("#verificationBangCode").val();
-  let bangType = $("#requestBangType").val();
-  let id = $("#requestBangId").val();
-  $(obj).addClass('disable_class');  
-  let objData = {};
-  objData.bangId = bangId;
-  objData.type = bangType;
-  objData.id = id;
-  $.ajax({
-     url: base_url+"/bang_request/verification",
-     method: 'POST',
-     data: JSON.stringify(objData),
-     contentType: "application/json",
-     success: function(response){ 
-           $(obj).removeClass('disable_class'); 
-           if(response.status) {
-            toastr.success(response.message, 'Thanks!');
-           }else {
-            toastr.error(response.message, 'Error!');
-           }
-          
-           
-           
-     }
-   });
+      }).setLngLat(latLong).addTo(map);
 }
